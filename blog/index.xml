@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>General on Nick Cobb</title>
-    <link>https://cobbservations.com/categories/general/index.xml</link>
-    <description>Recent content in General on Nick Cobb</description>
+    <title>Blog on Nick Cobb</title>
+    <link>https://cobbservations.com/blog/index.xml</link>
+    <description>Recent content in Blog on Nick Cobb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://cobbservations.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>About</title>
-      <link>https://cobbservations.com/about/</link>
-      <pubDate>Sun, 09 Apr 2017 23:22:59 -0400</pubDate>
-      
-      <guid>https://cobbservations.com/about/</guid>
-      <description>&lt;p&gt;Nick is currently a Senior Systems Engineer on the Developer Productivity team at &lt;a href=&#34;https://www.uberatc.com&#34;&gt;Uber Advanced Technologies&lt;/a&gt;. At Uber ATG, his main focus is building reliable, immutable infrastructure and improving the developer experience for self-driving developers.&lt;/p&gt;
-
-&lt;p&gt;In years previous, Nick supported mobile continuous integration infrastructure for Uber&amp;rsquo;s massive mobile engineering organization. In addition, Nick also provided full support for Uber&amp;rsquo;s global core business units in areas such as endpoint management, telecommunications strategy, network topologies, and scalability planning and design.&lt;/p&gt;
-
-&lt;p&gt;Nick regularly &lt;a href=&#34;https://github.com/loyaltyarm/speaking&#34;&gt;speaks at conferences&lt;/a&gt; and is a fan of baseball and bodybuilding. He also enjoys trying new restaurants with friends as well as regular traveling. His current challenges include learning how to be a (new) uncle and discovering new ways to advance his technology learning.&lt;/p&gt;
-</description>
-    </item>
+    <lastBuildDate>Sun, 09 Apr 2017 23:22:59 -0400</lastBuildDate>
+    <atom:link href="https://cobbservations.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Is this thing on?</title>
