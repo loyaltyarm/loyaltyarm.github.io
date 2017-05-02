@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/about/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/fixed/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/general/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/general/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/web/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/web/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
