@@ -41,5 +41,48 @@
 </description>
     </item>
     
+    <item>
+      <title>Building OS X Test Environments in VMWare Fusion w/ System Image Utility</title>
+      <link>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</link>
+      <pubDate>Tue, 11 Jun 2013 01:29:08 -0700</pubDate>
+      
+      <guid>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</guid>
+      <description>
+
+&lt;p&gt;A while ago, Rich Trouton posted a method for setting up an &lt;a href=&#34;https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/&#34;&gt;easily maintainable OSX virtual machine environment for testing&lt;/a&gt;, using DeployStudio (DSS) and a few other tools. His method is great because it allows you to build a specific test image (base) and store that as a workflow and master pair in your DSS environment. As Rich showed, it then becomes very easy to get going quickly when you need a fresh virtual machine to test new applications or other scenarios.&lt;/p&gt;
+
+&lt;p&gt;With today’s release of OS X Mavericks at WWDC, I found myself wanting to test a few things from the Developer beta(s) in a virtual machine but quickly realized I hadn’t really setup the ideal environment Rich describes in my home test lab, despite having the necessary equipment. I thought about running through my home DSS setup to get a test VM workflow setup, but due to the somewhat ‘temporary’ status of the developer beta, I didn’t want to spend too much time setting things up–what with &lt;a href=&#34;https://www.forbes.com/sites/erikkain/2013/06/10/game-of-thrones-season-3-finale-review-winter-is-coming/#559f63364008&#34;&gt;the coming winter&lt;/a&gt; and &lt;a href=&#34;http://www.tv.com/news/falling-skies-season-3-premiere-review-cowboys-and-aliens-137061338448/&#34;&gt;impending alien attacks&lt;/a&gt; waiting for me over on the media center. Needless to say, I wanted something I could set and forget for a few minutes.&lt;/p&gt;
+
+&lt;p&gt;I’ll use System Image Utility, I thought. I set about creating a NetBoot set using System Image Utility, and used Rich’s method of setting up a VMWare Fusion virtual machine to boot to the .nbi and get things installed. You can do this at home yourself as well. You’ll need the following to get started….&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OS X Mountain Lion Server (or other recent version) –for the NetInstall service and System Image Utility&lt;/li&gt;
+&lt;li&gt;OS X Mountain Lion installer application (downloaded from the Mac App Store)&lt;/li&gt;
+&lt;li&gt;VMWare Fusion 5&lt;/li&gt;
+&lt;li&gt;Some great shows to catch up on…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started:&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install and configure OS X Mountain Lion Server.&lt;/li&gt;
+&lt;li&gt;Setup the NetInstall service. A good walkthrough of Steps 2 and 3 is available here.&lt;/li&gt;
+&lt;li&gt;Use System Image Utility to build the NetBoot set (.nbi). See italics at Step 2.&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/&#34;&gt;Rich’s procedure&lt;/a&gt; for setting up a virtual machine to NetBoot using your .nbi. (See ‘Configuring the VM’ section of his post.)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;notes&#34;&gt;Notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In my setup, I was able to netboot the virtual machine to the netboot set while running both on the same system.&lt;/li&gt;
+&lt;li&gt;The VM should begin with the OS installation prompts at such time that the NetBooting process has completed. Follow the prompts to install and reboot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cobbservations.com/img/mavericks_vm_siu.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

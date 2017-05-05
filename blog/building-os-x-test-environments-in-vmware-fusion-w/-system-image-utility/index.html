@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+<meta property="og:title" content="Building OS X Test Environments in VMWare Fusion w/ System Image Utility" />
+<meta property="og:description" content="A while ago, Rich Trouton posted a method for setting up an easily maintainable OSX virtual machine environment for testing, using DeployStudio (DSS) and a few other tools. His method is great because it allows you to build a specific test image (base) and store that as a workflow and master pair in your DSS environment. As Rich showed, it then becomes very easy to get going quickly when you need a fresh virtual machine to test new applications or other scenarios." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/" />
+
+
+
+<meta property="article:published_time" content="2013-06-11T01:29:08-07:00"/>
+<meta property="article:modified_time" content="2013-06-11T01:29:08-07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Building OS X Test Environments in VMWare Fusion w/ System Image Utility 
+
+</title>
+<link rel="canonical" href="https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/">
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://cobbservations.com/css/reset.css?t=2017-05-05%2002%3a10%3a30.75713972%20-0700%20PDT">
+    <link rel="stylesheet" href="https://cobbservations.com/css/pygments.css?t=2017-05-05%2002%3a10%3a30.75713972%20-0700%20PDT">
+    <link rel="stylesheet" href="https://cobbservations.com/css/main.css?t=2017-05-05%2002%3a10%3a30.75713972%20-0700%20PDT">
+    
+        <link rel="stylesheet" href="https://cobbservations.com/css/override.css?t=2017-05-05%2002%3a10%3a30.75713972%20-0700%20PDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://cobbservations.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                
+                <a href="https://cobbservations.com/"><img class="avatar" src="https://cobbservations.com/img/headshot.jpg" srcset="https://cobbservations.com/img/headshot.jpg 1x"></a>
+            
+            <a href="https://cobbservations.com/"><div class="name">Nick Cobb</div></a>
+            
+              <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://cobbservations.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://cobbservations.com/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://cobbservations.com/resume/"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://cobbservations.com/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://cobbservations.com/index.xml"><img class="icon" src="https://cobbservations.com/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Building OS X Test Environments in VMWare Fusion w/ System Image Utility
+
+</div>
+
+                    <div class="initials"><a href="https://cobbservations.com"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Jun 11 2013 01:29:08 PDT'>Jun 11, 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>A while ago, Rich Trouton posted a method for setting up an <a href="https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/">easily maintainable OSX virtual machine environment for testing</a>, using DeployStudio (DSS) and a few other tools. His method is great because it allows you to build a specific test image (base) and store that as a workflow and master pair in your DSS environment. As Rich showed, it then becomes very easy to get going quickly when you need a fresh virtual machine to test new applications or other scenarios.</p>
+
+<p>With today’s release of OS X Mavericks at WWDC, I found myself wanting to test a few things from the Developer beta(s) in a virtual machine but quickly realized I hadn’t really setup the ideal environment Rich describes in my home test lab, despite having the necessary equipment. I thought about running through my home DSS setup to get a test VM workflow setup, but due to the somewhat ‘temporary’ status of the developer beta, I didn’t want to spend too much time setting things up–what with <a href="https://www.forbes.com/sites/erikkain/2013/06/10/game-of-thrones-season-3-finale-review-winter-is-coming/#559f63364008">the coming winter</a> and <a href="http://www.tv.com/news/falling-skies-season-3-premiere-review-cowboys-and-aliens-137061338448/">impending alien attacks</a> waiting for me over on the media center. Needless to say, I wanted something I could set and forget for a few minutes.</p>
+
+<p>I’ll use System Image Utility, I thought. I set about creating a NetBoot set using System Image Utility, and used Rich’s method of setting up a VMWare Fusion virtual machine to boot to the .nbi and get things installed. You can do this at home yourself as well. You’ll need the following to get started….</p>
+
+<h2 id="requirements">Requirements:</h2>
+
+<ul>
+<li>OS X Mountain Lion Server (or other recent version) –for the NetInstall service and System Image Utility</li>
+<li>OS X Mountain Lion installer application (downloaded from the Mac App Store)</li>
+<li>VMWare Fusion 5</li>
+<li>Some great shows to catch up on…</li>
+</ul>
+
+<h2 id="get-started">Get Started:</h2>
+
+<ol>
+<li>Install and configure OS X Mountain Lion Server.</li>
+<li>Setup the NetInstall service. A good walkthrough of Steps 2 and 3 is available here.</li>
+<li>Use System Image Utility to build the NetBoot set (.nbi). See italics at Step 2.</li>
+<li>Use <a href="https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/">Rich’s procedure</a> for setting up a virtual machine to NetBoot using your .nbi. (See ‘Configuring the VM’ section of his post.)</li>
+</ol>
+
+<h2 id="notes">Notes:</h2>
+
+<ul>
+<li>In my setup, I was able to netboot the virtual machine to the netboot set while running both on the same system.</li>
+<li>The VM should begin with the OS installation prompts at such time that the NetBooting process has completed. Follow the prompts to install and reboot.</li>
+</ul>
+
+<p><img src="https://cobbservations.com/img/mavericks_vm_siu.png" alt="screenshot" /></p>
+
+                <br>
+		<p><a href="https://cobbservations.com/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98500532-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+
