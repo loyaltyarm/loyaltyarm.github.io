@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</loc>
+    <lastmod>2013-06-27T23:20:18-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</loc>
     <lastmod>2013-06-11T01:29:08-07:00</lastmod>
   </url>
@@ -34,13 +39,13 @@
   </url>
   
   <url>
-    <loc>https://cobbservations.com/categories/general/</loc>
+    <loc>https://cobbservations.com/tags/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/tags/general/</loc>
+    <loc>https://cobbservations.com/categories/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -57,13 +62,13 @@
   </url>
   
   <url>
-    <loc>https://cobbservations.com/categories/web/</loc>
+    <loc>https://cobbservations.com/tags/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/tags/web/</loc>
+    <loc>https://cobbservations.com/categories/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
