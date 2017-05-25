@@ -2,52 +2,239 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nick Cobb</title>
-    <link>https://cobbservations.com/</link>
+    <link>https://loyaltyarm.github.io/index.xml</link>
     <description>Recent content on Nick Cobb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 09 Apr 2017 23:22:59 -0400</lastBuildDate>
-    
-	<atom:link href="https://cobbservations.com/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://loyaltyarm.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>https://cobbservations.com/about/</link>
+      <link>https://loyaltyarm.github.io/about/</link>
       <pubDate>Sun, 09 Apr 2017 23:22:59 -0400</pubDate>
       
-      <guid>https://cobbservations.com/about/</guid>
-      <description>Nick is currently a Senior Systems Engineer on the Developer Productivity team at Uber Advanced Technologies. At Uber ATG, his main focus is building reliable, immutable infrastructure and improving the developer experience for self-driving developers.
-In years previous, Nick supported mobile continuous integration infrastructure for Uber&amp;rsquo;s massive mobile engineering organization. In addition, Nick also provided full support for Uber&amp;rsquo;s global core business units in areas such as endpoint management, telecommunications strategy, network topologies, and scalability planning and design.</description>
+      <guid>https://loyaltyarm.github.io/about/</guid>
+      <description>&lt;p&gt;Nick is currently a Senior Systems Engineer on the Developer Productivity team at &lt;a href=&#34;https://www.uberatc.com&#34;&gt;Uber Advanced Technologies&lt;/a&gt;. At Uber ATG, his main focus is building reliable, immutable infrastructure and improving the developer experience for self-driving developers.&lt;/p&gt;
+
+&lt;p&gt;In years previous, Nick supported mobile continuous integration infrastructure for Uber&amp;rsquo;s massive mobile engineering organization. In addition, Nick also provided full support for Uber&amp;rsquo;s global core business units in areas such as endpoint management, telecommunications strategy, network topologies, and scalability planning and design.&lt;/p&gt;
+
+&lt;p&gt;Nick regularly &lt;a href=&#34;https://github.com/loyaltyarm/speaking&#34;&gt;speaks at conferences&lt;/a&gt; and is a fan of baseball and bodybuilding. He also enjoys trying new restaurants with friends as well as regular traveling. His current challenges include learning how to be a (new) uncle and discovering new ways to advance his technology learning.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Is this thing on?</title>
-      <link>https://cobbservations.com/blog/is-this-thing-on/</link>
+      <link>https://loyaltyarm.github.io/blog/is-this-thing-on/</link>
       <pubDate>Sun, 09 Apr 2017 23:22:59 -0400</pubDate>
       
-      <guid>https://cobbservations.com/blog/is-this-thing-on/</guid>
-      <description>Wat This is the initial post in a series of steps I am taking to move Cobbservations to a site powered by Hugo. I stumbled across hugo recently while working with the maintainers of the micromdm project. The beautiful site hosting the documentation is build with hugo, and given the looks, I just had to try it.
-Somewhat separately, I&amp;rsquo;ve been using Markdown for quite a while and have finally gotten around to enjoying it more than standard wordpress-style content for blogging.</description>
+      <guid>https://loyaltyarm.github.io/blog/is-this-thing-on/</guid>
+      <description>
+
+&lt;h1 id=&#34;wat&#34;&gt;Wat&lt;/h1&gt;
+
+&lt;p&gt;This is the initial post in a series of steps I am taking to move &lt;a href=&#34;https://cobbservations.wordpress.com&#34;&gt;Cobbservations&lt;/a&gt; to a site powered by &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. I stumbled across &lt;code&gt;hugo&lt;/code&gt; recently while working with the maintainers of the &lt;a href=&#34;https://github.com/micromdm&#34;&gt;&lt;code&gt;micromdm&lt;/code&gt;&lt;/a&gt; project. The &lt;a href=&#34;https://micromdm.io&#34;&gt;beautiful site&lt;/a&gt; hosting the documentation is build with &lt;code&gt;hugo&lt;/code&gt;, and given the looks, I just &lt;em&gt;had&lt;/em&gt; to try it.&lt;/p&gt;
+
+&lt;p&gt;Somewhat separately, I&amp;rsquo;ve been using &lt;a href=&#34;http://www.markdowntutorial.com&#34;&gt;Markdown&lt;/a&gt; for quite a while and have finally gotten around to enjoying it more than standard wordpress-style content for blogging. I even recently re-formatted all of my &lt;a href=&#34;https://github.com/loyaltyarm/splunk&#34;&gt;splunk repo&lt;/a&gt; searches to a more uniform Markdown syntax. So, I&amp;rsquo;m undertaking a project of moving my blog contents over to Github hosting and plan to use &lt;code&gt;hugo&lt;/code&gt; to maintain it.&lt;/p&gt;
+
+&lt;p&gt;Lastly, one of the main features I like about Wordpress is its social network integration. This makes it super easy to update your LinkedIn network or Twitter followers that you&amp;rsquo;ve published a new post. I&amp;rsquo;m going to try to include this functionality in the &lt;code&gt;hugo&lt;/code&gt; site when I get more time to figure out how to get that going.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Splunk for McAfee EEMac/Filevault 2 Comparison - Part 2</title>
+      <link>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/</link>
+      <pubDate>Sat, 13 Jul 2013 17:53:26 -0500</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/&#34;&gt;In Part 1&lt;/a&gt;, we looked at setting up Disk I/O monitoring using Splunk. In Part 2, we will look into formatting our search in order to get the most of our data.&lt;/p&gt;
+
+&lt;p&gt;To place this post in the context of its title, I&amp;rsquo;m moving away from using the machine that was shown in Part 1 as connected to Splunk (&lt;code&gt;loyaltyarms-mac.local&lt;/code&gt;). That was merely to show you how to get your data into Splunk. Now, we will look at pulling search data for Disk I/O from 2 sources added to my Splunk environment for this test. Those machines are &lt;code&gt;test-fv2&lt;/code&gt; (shown as &lt;code&gt;test-fv2.local&lt;/code&gt;) and &lt;code&gt;test-mcafee&lt;/code&gt; (shown as &lt;code&gt;test-mcafee.local&lt;/code&gt;). Let&amp;rsquo;s get started! 👍&lt;/p&gt;
+
+&lt;p&gt;The first machine we will setup search for will be the FileVault test MBA. In searching for data from a specific host, we will want to refine our search to only show us data from that host specifically. Therefore, the first thing we will do is proceed to the &lt;em&gt;Search&lt;/em&gt; app in Splunk, and click the &lt;em&gt;Summary&lt;/em&gt; or &lt;em&gt;Search&lt;/em&gt; menus in the toolbar. Next, we will enter the host information into the search bar:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;host=&amp;quot;test-fv2.local&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-host.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we enter this information, Splunk’s search bar will pop down a very useful context menu for assisting with search terms and syntax. There are even links to documentation to view the best way to format a search. Go ahead and enter the text above into your search bar and hit &lt;em&gt;Enter&lt;/em&gt;. (Even easier, you may click on the host’s name in the bottom right of the &lt;em&gt;Summary&lt;/em&gt; screen to display results immediately for that host.) After you press &lt;em&gt;Enter&lt;/em&gt; (and if Splunk is indexing events from your host as typed), the screen changes to a view displaying a timeline of results across the top, and a table of the results down below (shown above). Along the left column is a list of fields that Splunk was able to recognize just from indexing the forwarded results. You can add these fields to this and other searches as additional fields. It is worth mentioning that if you have additional sourcetypes for a given host, you may want to restrict the results further. To do this, simply enter:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sourcetype=&amp;quot;&amp;lt;x&amp;gt;&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;hellip;where &lt;code&gt;&amp;lt;x&amp;gt;&lt;/code&gt; is replaced with the sourcetype of your Disk I/O data. In my case, the sourcetype is named &lt;em&gt;Apple Disk I/O&lt;/em&gt;.  Now that we know for sure that our data is restricted to the machine and type that we want, we can proceed with narrowing our search for the four fields listed in Part 1. Splunk has excellent documentation on searching, since that is the primary way of getting custom reporting out of the software. You can get started with Search documentation &lt;a href=&#34;http://docs.splunk.com/Documentation/Splunk/latest/Search/Whatsinthismanual&#34;&gt;here&lt;/a&gt;. &lt;a href=&#34;http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual&#34;&gt;This is also another good starting place.&lt;/a&gt; This first thing we will do is separate our initial search requirements from our refinements with a pipe &lt;code&gt;|&lt;/code&gt; character to give Splunk multiple search commands. In the search box where your search for host and sourcetype exists, use a tailing space and a pipe and the multikv command to extract field-values from table-formatted disk i/o results we are now showing. Our search contain the same text as below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sourcetype=&amp;quot;Apple Disk I/O&amp;quot; host=&amp;quot;test-fv2.local&amp;quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-sourcetype.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What did we do here? We used the &lt;code&gt;multikv&lt;/code&gt; command to set the fields we want to extract data from. These were our data headings from the previously-shown results:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Device
+rReq_PS
+wReq_PS
+rKB_PS
+wKB_PS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since we are now showing our data in table-form without the headers, we now want to create some kind of visualization or reporting pattern that allows us to examine certain fields over time. In Part 1, we discussed that &lt;code&gt;rReq_PS&lt;/code&gt; and &lt;code&gt;wReq_PS&lt;/code&gt; represent the values for disk Operations/sec for Read and Write, respectively. For now, let’s go ahead and create a &lt;a href=&#34;http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/Timechart&#34;&gt;timechart&lt;/a&gt; for those two fields, and sort them by Device, using the full search string below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sourcetype=&amp;quot;Apple Disk I/O&amp;quot; host=&amp;quot;test-fv2.local&amp;quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS | timechart avg(rReq_PS) avg(wReq_PS) by Device
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-sourcetype2.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now our data is shown in a somewhat-simplified table. As a side note, Splunk has a number of charting options available as search commands, just follow the links from earlier to view the Splunk search manuals and documentation.&lt;/p&gt;
+
+&lt;p&gt;At this point you can click on the &lt;em&gt;Results Chart&lt;/em&gt; icon in the top left of the table view area to sort this data in a visualization of your choosing. However, if we examine this table closely, we notice that our headings are still represented in their original syntax as returned from the &lt;code&gt;iostat.sh&lt;/code&gt; script we initiated earlier. Wouldn’t it be better to rename these fields for ease of reporting? Our director may end up with this report, and we want he/she to understand what he/she are reading here, so let’s add to our search to make that a little easier to understand. Our search now extends one level further, using the &lt;code&gt;rename&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sourcetype=&amp;quot;Apple Disk I/O&amp;quot; host=&amp;quot;test-fv2.local&amp;quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS | timechart avg(rReq_PS) avg(wReq_PS) by Device | rename &amp;quot;avg(rReq_PS): disk0&amp;quot; AS &amp;quot;Operations (Read): disk0&amp;quot;, &amp;quot;avg(wReq_PS): disk0&amp;quot; AS &amp;quot;Operations (Write): disk0&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now our columns are renamed accurately, but our search bar is getting crowded. That&amp;rsquo;s okay, because at this point we are finished with adding specific search criteria. If additional disks were found in your reporting, you can easily reformat those columns using the same string we did above, just change the column name between &lt;code&gt;rename&lt;/code&gt; and &lt;code&gt;AS&lt;/code&gt; to match your rogue column (as many times as you need to).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-sourcetype3.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This gives us a good overview of how to search and an understanding of how we can pull information from Splunk. For the test comparison we are doing here, we will be formatting our search to include multiple hosts, so as to show all of the results of the different reporting types (&lt;em&gt;Operations&lt;/em&gt; vs. &lt;em&gt;KB&lt;/em&gt;) across both machines on the same visualization. For this we will utilize &lt;em&gt;Report Builder&lt;/em&gt; [(Part 3)]() after we have tweaked our search a bit. We will also be adding a custom time to our search in order to be able to look at different points in the encryption process and compare. We will go ahead and add custom time now, so that you can play with your results in the meantime to see if they differ for your own testing.&lt;/p&gt;
+
+&lt;p&gt;Once we have the search formatted as above, we can navigate to the right of the search bar and select the green button with time indication text displaying on it. Clicking on the green time button reveals some pre-configured searches, as well as the ability to configure a custom time range to search for results based on our search syntax. Let’s select custom time here. When clicked, we are met with a custom time selection box, shown here:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-customtime.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the period that you would like to monitor. For me, I want to monitor the specific 24 hour period in which the FV2 Mac was idle, and then encryption began. *The results to be shown are fairly generic, but for [Part 3](), I will be posting the exact times and dates as reported in order to display accurately compared results. After the search has been formatted, you can see that the results are again displayed in table format, and can be configured for Visualization reporting based on that time period using the &lt;em&gt;Results Chart&lt;/em&gt; button from earlier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk-tableview.png&#34; alt=&#34;forwarder package&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you know how to add custom search times, see what you can come up with. In [Part 3](), we will use &lt;em&gt;Report Builder&lt;/em&gt; to build a report based on a specific complex search of the 2 machines, and report on their disk i/o performance during 4 key times in the encryption process. Stay tuned! 📻&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Using Splunk for McAfee EEMac/Filevault 2 Comparison – Part 1</title>
-      <link>https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</link>
+      <link>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</link>
       <pubDate>Thu, 27 Jun 2013 23:20:18 -0700</pubDate>
       
-      <guid>https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</guid>
-      <description>Recently I ran across a post about setting up Splunk to work with DeployStudio via Noel Balonso. I began using Splunk for reporting on my Apple and Windows (test) imaging environments, to much satisfaction.
-In the meantime, I have also been working with McAfee’s EEMac product for full-disk encryption in OS X. Our org has been comparing its performance to FileVault 2 and trying to make a decision as to whether or not to proceed based on our existing environment for Windows management, which also utilizes McAfee’s FDE product for Windows (formerly Safeboot).</description>
+      <guid>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</guid>
+      <description>
+
+&lt;p&gt;Recently I ran across a post about setting up Splunk to work with DeployStudio &lt;a href=&#34;http://nbalonso.com/the-logs-talk/&#34;&gt;via Noel Balonso&lt;/a&gt;. I began using Splunk for reporting on my Apple and Windows (test) imaging environments, to much satisfaction.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, I have also been working with McAfee’s EEMac product for full-disk encryption in OS X. Our org has been comparing its performance to FileVault 2 and trying to make a decision as to whether or not to proceed based on our existing environment for Windows management, which also utilizes McAfee’s FDE product for Windows (formerly Safeboot). We decided to use the information we could pull from Splunk to compare disk I/O of McAfee vs. FileVault. The script borrowed from the &lt;a href=&#34;http://splunk-base.splunk.com/apps/22314/splunk-for-unix-and-linux&#34;&gt;Splunk App for *nix&lt;/a&gt; (&lt;code&gt;iostat&lt;/code&gt;) reports the disk i/o in Operations per second (for both read and write), as well as Kilobytes per second (for both read and write). While this is not a all-encompassing measure of machine performance before, during, and after encryption phases, it does point us in the direction of knowing which product may keep the disk busiest during the phases, as well as (when compared to other machine reporting) allow for a better overall picture of the encryption impact on the machine.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-setup&#34;&gt;The Setup:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;(2) MacBookAir5,2 (1.8Ghz i5, 4GB 1600 Mhz DDR3, 128GB flash storage)&lt;/li&gt;
+&lt;li&gt;(1) Splunk server (setup to receive inputs at the default 9997 port, available here)&lt;/li&gt;
+&lt;li&gt;(2) Splunk universal forwarders - OS X 10.8 version (available here)&lt;/li&gt;
+&lt;li&gt;(1) McAfee EEMac product installation - part of existing ePO infrastructure at my org&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Step 1&lt;/em&gt; – Image each of the MBAs with the OEM factory Apple image, so that machine configuration would be at complete defaults to establish a valid base for this test.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Step 2&lt;/em&gt; – Setup the machines with generic local admin account.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Step 3&lt;/em&gt; – Download Splunk universal forwarder to each machine. You will also need to have the Splunk App for *nix installed on your receiving server in order to pull the pre-written scripts to each client for testing.&lt;/p&gt;
+
+&lt;p&gt;After both machines received the appropriate files, it was time to commence setup for baseline testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Step 4&lt;/em&gt; – Run the installer package for universal forwarder. Nothing out of the ordinary here, just run through the package to install. When finished, move to the next step.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/splunk_forwarder_pkg.png&#34; alt=&#34;forwarder package&#34; /&gt;
+&lt;img src=&#34;https://loyaltyarm.github.io/img/install_success.png&#34; alt=&#34;install success!&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Step 5&lt;/em&gt; – Once the package completes, close the ReadMe in TextEdit (read it first), and close any other items that are open. Copy scripts borrowed from Splunk app for *nix to &lt;code&gt;/Applications/SplunkForwarder/bin/scripts/iostat/&lt;/code&gt; on each MBA that will be tested.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;(It is worth noting that normally, the typical place to insert scripts is in the /scripts/ folder from the path above. However, because I wanted the sources to reflect differently than other production reporting I am doing, I chose to create the &lt;code&gt;iostat&lt;/code&gt; directory and copied all of the scripts into that folder for uniqueness.)&lt;/p&gt;
+
+&lt;p&gt;(It is also worth mentioning that I initially copied just the &lt;code&gt;iostat.sh&lt;/code&gt; script from the Splunk App for *nix to this directory, only to find that my forwarders were showing in Deployment Monitor, but not adding any search data. This was due to the fact that the script was running, but sending an error to the server that other scripts it relied upon (common.sh) were not found. For this reason, I copied over all of the scripts just in case.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Step 6&lt;/em&gt; – Open a Terminal window, and navigate to the installation directory, in my case &lt;code&gt;/Applications/SplunkForwarder/bin/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Step 7&lt;/em&gt; – Start the Splunk universal forwarder by typing the command (you may have to authenticate as root to perform these commands):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./splunk start --accept-license
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Step 8&lt;/em&gt; – Enable boot-start configuration so the forwarder starts at startup:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./splunk enable boot-start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Step 9&lt;/em&gt; – Set the forwarder to send data to the receiving server (substitute &lt;code&gt;&amp;lt;ipaddress:port&amp;gt;&lt;/code&gt; with your server’s address and receiving port):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./splunk add forward-server &amp;lt;ipaddress:port&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Step 10&lt;/em&gt; – Set the forwarder to execute the script (sourcetype and interval (seconds) can be set to your choosing, however these were my settings):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ./splunk add exec /Application/SplunkForwarder/bin/scripts/iostat/iostat.sh -sourcetype &#39;Apple Disk I/O&#39; -interval 60.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Step 11&lt;/em&gt; – At this point, your server should be showing your machine as a host. Repeat this process for the second test machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/machine_shows.png&#34; alt=&#34;Machine Shows&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If these steps didn’t work for you, there are a few things look at to troubleshoot your deployment. First, you can install the &lt;a href=&#34;http://splunk-base.splunk.com/apps/67836/splunk-deployment-monitor&#34;&gt;Splunk Deployment Monitor App&lt;/a&gt;, which will allow you to view forwarders even if they are not reporting. Second, you can follow &lt;a href=&#34;http://docs.splunk.com/Documentation/Splunk/latest/Troubleshooting/Cantfinddata#Are_you_using_forwarders.3F&#34;&gt;these instructions&lt;/a&gt; to search the internal indexes to see if there are problems with your forwarders. Feel free to post comments if you need help, and I will assist!&lt;/p&gt;
+
+&lt;p&gt;So now that we have the data being sent to our Splunk server, what can we do with it? The Splunk App for *nix provided us with the &lt;code&gt;iostat.sh&lt;/code&gt; script to check on disk i/o and try to report on what is going on. Inside that script, you will notice that for machines using Darwin kernel (splunk calls it a platform), there are several categories that will get reported as headers in the table for our source. The way splunk reads it as reported by the script, those headers are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rReq_PS&lt;/code&gt; (Shown in the script as: Operations Read (per second)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wReq_PS&lt;/code&gt; (Shown in the script as: Operations Write (per second)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rKB_PS&lt;/code&gt; (Shown in the script as: KiloBytes Read (per second)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wKB_PS&lt;/code&gt; (Shown in the script as: KiloBytes Write (per second)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other headers include the device, and time and bandwidth measures. I could never get the latter 2 to show me any data, perhaps a problem with the script? For my reporting, I setup a search that extracted fields from the headers of the table, and reported on those fields in a simplified table based on &lt;em&gt;Operations&lt;/em&gt; (both read/write) and &lt;em&gt;KiloBytes&lt;/em&gt; (both read/write), then displayed those as a charted visualization based on the average value per minute (remember my interval is &lt;code&gt;60.0&lt;/code&gt; seconds). I extended the search for a custom time frame, in this case 8 hours, the length of a typical work day and sure to cover all periods previous for quick glance reporting on my dashboard visualizations. For the purposes of this posting, I will note where that time visualization was customized in [Parts 2]() and [3]() when I post the results.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for [Part 2]()! I will be posting the search mechanisms for the Disk I/O, and will show how to create a visualization based on the data for each search. If you want to become more familiar with Splunk in the meantime, you can check out &lt;a href=&#34;https://github.com/loyaltyarm/splunk&#34;&gt;my Splunk search repository on Github&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Building OS X Test Environments in VMWare Fusion w/ System Image Utility</title>
-      <link>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</link>
+      <link>https://loyaltyarm.github.io/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</link>
       <pubDate>Tue, 11 Jun 2013 01:29:08 -0700</pubDate>
       
-      <guid>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</guid>
-      <description>A while ago, Rich Trouton posted a method for setting up an easily maintainable OSX virtual machine environment for testing, using DeployStudio (DSS) and a few other tools. His method is great because it allows you to build a specific test image (base) and store that as a workflow and master pair in your DSS environment. As Rich showed, it then becomes very easy to get going quickly when you need a fresh virtual machine to test new applications or other scenarios.</description>
+      <guid>https://loyaltyarm.github.io/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</guid>
+      <description>
+
+&lt;p&gt;A while ago, Rich Trouton posted a method for setting up an &lt;a href=&#34;https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/&#34;&gt;easily maintainable OSX virtual machine environment for testing&lt;/a&gt;, using DeployStudio (DSS) and a few other tools. His method is great because it allows you to build a specific test image (base) and store that as a workflow and master pair in your DSS environment. As Rich showed, it then becomes very easy to get going quickly when you need a fresh virtual machine to test new applications or other scenarios.&lt;/p&gt;
+
+&lt;p&gt;With today’s release of OS X Mavericks at WWDC, I found myself wanting to test a few things from the Developer beta(s) in a virtual machine but quickly realized I hadn’t really setup the ideal environment Rich describes in my home test lab, despite having the necessary equipment. I thought about running through my home DSS setup to get a test VM workflow setup, but due to the somewhat ‘temporary’ status of the developer beta, I didn’t want to spend too much time setting things up–what with &lt;a href=&#34;https://www.forbes.com/sites/erikkain/2013/06/10/game-of-thrones-season-3-finale-review-winter-is-coming/#559f63364008&#34;&gt;the coming winter&lt;/a&gt; and &lt;a href=&#34;http://www.tv.com/news/falling-skies-season-3-premiere-review-cowboys-and-aliens-137061338448/&#34;&gt;impending alien attacks&lt;/a&gt; waiting for me over on the media center. Needless to say, I wanted something I could set and forget for a few minutes.&lt;/p&gt;
+
+&lt;p&gt;I’ll use System Image Utility, I thought. I set about creating a NetBoot set using System Image Utility, and used Rich’s method of setting up a VMWare Fusion virtual machine to boot to the .nbi and get things installed. You can do this at home yourself as well. You’ll need the following to get started….&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OS X Mountain Lion Server (or other recent version) –for the NetInstall service and System Image Utility&lt;/li&gt;
+&lt;li&gt;OS X Mountain Lion installer application (downloaded from the Mac App Store)&lt;/li&gt;
+&lt;li&gt;VMWare Fusion 5&lt;/li&gt;
+&lt;li&gt;Some great shows to catch up on…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started:&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install and configure OS X Mountain Lion Server.&lt;/li&gt;
+&lt;li&gt;Setup the NetInstall service. A good walkthrough of Steps 2 and 3 is available here.&lt;/li&gt;
+&lt;li&gt;Use System Image Utility to build the NetBoot set (.nbi). See italics at Step 2.&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://derflounder.wordpress.com/2013/01/23/building-mac-test-environments-with-vmware-fusion-netboot-and-deploystudio/&#34;&gt;Rich’s procedure&lt;/a&gt; for setting up a virtual machine to NetBoot using your .nbi. (See ‘Configuring the VM’ section of his post.)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;notes&#34;&gt;Notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In my setup, I was able to netboot the virtual machine to the netboot set while running both on the same system.&lt;/li&gt;
+&lt;li&gt;The VM should begin with the OS installation prompts at such time that the NetBooting process has completed. Follow the prompts to install and reboot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://loyaltyarm.github.io/img/mavericks_vm_siu.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

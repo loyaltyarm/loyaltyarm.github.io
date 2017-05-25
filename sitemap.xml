@@ -2,74 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://cobbservations.com/about/</loc>
+    <loc>https://loyaltyarm.github.io/about/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/blog/is-this-thing-on/</loc>
+    <loc>https://loyaltyarm.github.io/blog/is-this-thing-on/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</loc>
+    <loc>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/</loc>
+    <lastmod>2013-07-13T17:53:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/</loc>
     <lastmod>2013-06-27T23:20:18-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</loc>
+    <loc>https://loyaltyarm.github.io/blog/building-os-x-test-environments-in-vmware-fusion-w/-system-image-utility/</loc>
     <lastmod>2013-06-11T01:29:08-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/blog/</loc>
+    <loc>https://loyaltyarm.github.io/blog/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/categories/</loc>
+    <loc>https://loyaltyarm.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/fixed/</loc>
+    <loc>https://loyaltyarm.github.io/fixed/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/tags/general/</loc>
+    <loc>https://loyaltyarm.github.io/tags/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/categories/general/</loc>
+    <loc>https://loyaltyarm.github.io/categories/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/</loc>
+    <loc>https://loyaltyarm.github.io/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/tags/</loc>
+    <loc>https://loyaltyarm.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cobbservations.com/tags/web/</loc>
-    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cobbservations.com/categories/web/</loc>
+    <loc>https://loyaltyarm.github.io/categories/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>

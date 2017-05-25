@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="In Part 1, we looked at setting up Disk I/O monitoring using Splunk. In Part 2, we will look into formatting our search in order to get the most of our data.
+To place this post in the context of its title, I&rsquo;m moving away from using the machine that was shown in Part 1 as connected to Splunk (loyaltyarms-mac.local). That was merely to show you how to get your data into Splunk.">
+
+<meta property="og:title" content="Using Splunk for McAfee EEMac/Filevault 2 Comparison - Part 2" />
+<meta property="og:description" content="In Part 1, we looked at setting up Disk I/O monitoring using Splunk. In Part 2, we will look into formatting our search in order to get the most of our data.
+To place this post in the context of its title, I&rsquo;m moving away from using the machine that was shown in Part 1 as connected to Splunk (loyaltyarms-mac.local). That was merely to show you how to get your data into Splunk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/" />
+
+
+
+<meta property="article:published_time" content="2013-07-13T17:53:26-05:00"/>
+<meta property="article:modified_time" content="2013-07-13T17:53:26-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Using Splunk for McAfee EEMac/Filevault 2 Comparison - Part 2 
+
+</title>
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-05-24%2019%3a01%3a02.505180031%20-0500%20CDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-05-24%2019%3a01%3a02.505180031%20-0500%20CDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-05-24%2019%3a01%3a02.505180031%20-0500%20CDT">
+    
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-05-24%2019%3a01%3a02.505180031%20-0500%20CDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://loyaltyarm.github.io/img/leaf.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://loyaltyarm.github.io/"><img class="avatar" src="https://loyaltyarm.github.io/img/headshot.jpg" srcset="https://loyaltyarm.github.io/img/headshot.jpg 1x"></a>
+            
+            <a href="https://loyaltyarm.github.io/"><div class="name">Nick Cobb</div></a>
+            
+              <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://loyaltyarm.github.io/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://loyaltyarm.github.io/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://linkedin.com/in/loyaltyarm"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://loyaltyarm.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://loyaltyarm.github.io/index.xml"><img class="icon" src="https://loyaltyarm.github.io/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Using Splunk for McAfee EEMac/Filevault 2 Comparison - Part 2
+
+</div>
+
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Jul 13 2013 17:53:26 CDT'>Jul 13, 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>7 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><a href="https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/">In Part 1</a>, we looked at setting up Disk I/O monitoring using Splunk. In Part 2, we will look into formatting our search in order to get the most of our data.</p>
+
+<p>To place this post in the context of its title, I&rsquo;m moving away from using the machine that was shown in Part 1 as connected to Splunk (<code>loyaltyarms-mac.local</code>). That was merely to show you how to get your data into Splunk. Now, we will look at pulling search data for Disk I/O from 2 sources added to my Splunk environment for this test. Those machines are <code>test-fv2</code> (shown as <code>test-fv2.local</code>) and <code>test-mcafee</code> (shown as <code>test-mcafee.local</code>). Let&rsquo;s get started! 👍</p>
+
+<p>The first machine we will setup search for will be the FileVault test MBA. In searching for data from a specific host, we will want to refine our search to only show us data from that host specifically. Therefore, the first thing we will do is proceed to the <em>Search</em> app in Splunk, and click the <em>Summary</em> or <em>Search</em> menus in the toolbar. Next, we will enter the host information into the search bar:</p>
+
+<p><code>host=&quot;test-fv2.local</code></p>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-host.png" alt="forwarder package" /></p>
+
+<p>As we enter this information, Splunk’s search bar will pop down a very useful context menu for assisting with search terms and syntax. There are even links to documentation to view the best way to format a search. Go ahead and enter the text above into your search bar and hit <em>Enter</em>. (Even easier, you may click on the host’s name in the bottom right of the <em>Summary</em> screen to display results immediately for that host.) After you press <em>Enter</em> (and if Splunk is indexing events from your host as typed), the screen changes to a view displaying a timeline of results across the top, and a table of the results down below (shown above). Along the left column is a list of fields that Splunk was able to recognize just from indexing the forwarded results. You can add these fields to this and other searches as additional fields. It is worth mentioning that if you have additional sourcetypes for a given host, you may want to restrict the results further. To do this, simply enter:</p>
+
+<p><code>sourcetype=&quot;&lt;x&gt;&quot;</code></p>
+
+<p>&hellip;where <code>&lt;x&gt;</code> is replaced with the sourcetype of your Disk I/O data. In my case, the sourcetype is named <em>Apple Disk I/O</em>.  Now that we know for sure that our data is restricted to the machine and type that we want, we can proceed with narrowing our search for the four fields listed in Part 1. Splunk has excellent documentation on searching, since that is the primary way of getting custom reporting out of the software. You can get started with Search documentation <a href="http://docs.splunk.com/Documentation/Splunk/latest/Search/Whatsinthismanual">here</a>. <a href="http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">This is also another good starting place.</a> This first thing we will do is separate our initial search requirements from our refinements with a pipe <code>|</code> character to give Splunk multiple search commands. In the search box where your search for host and sourcetype exists, use a tailing space and a pipe and the multikv command to extract field-values from table-formatted disk i/o results we are now showing. Our search contain the same text as below:</p>
+
+<pre><code>sourcetype=&quot;Apple Disk I/O&quot; host=&quot;test-fv2.local&quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS |
+</code></pre>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-sourcetype.png" alt="forwarder package" /></p>
+
+<p>What did we do here? We used the <code>multikv</code> command to set the fields we want to extract data from. These were our data headings from the previously-shown results:</p>
+
+<pre><code>Device
+rReq_PS
+wReq_PS
+rKB_PS
+wKB_PS
+</code></pre>
+
+<p>Since we are now showing our data in table-form without the headers, we now want to create some kind of visualization or reporting pattern that allows us to examine certain fields over time. In Part 1, we discussed that <code>rReq_PS</code> and <code>wReq_PS</code> represent the values for disk Operations/sec for Read and Write, respectively. For now, let’s go ahead and create a <a href="http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/Timechart">timechart</a> for those two fields, and sort them by Device, using the full search string below:</p>
+
+<pre><code>sourcetype=&quot;Apple Disk I/O&quot; host=&quot;test-fv2.local&quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS | timechart avg(rReq_PS) avg(wReq_PS) by Device
+</code></pre>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-sourcetype2.png" alt="forwarder package" /></p>
+
+<p>Now our data is shown in a somewhat-simplified table. As a side note, Splunk has a number of charting options available as search commands, just follow the links from earlier to view the Splunk search manuals and documentation.</p>
+
+<p>At this point you can click on the <em>Results Chart</em> icon in the top left of the table view area to sort this data in a visualization of your choosing. However, if we examine this table closely, we notice that our headings are still represented in their original syntax as returned from the <code>iostat.sh</code> script we initiated earlier. Wouldn’t it be better to rename these fields for ease of reporting? Our director may end up with this report, and we want he/she to understand what he/she are reading here, so let’s add to our search to make that a little easier to understand. Our search now extends one level further, using the <code>rename</code> command.</p>
+
+<pre><code>sourcetype=&quot;Apple Disk I/O&quot; host=&quot;test-fv2.local&quot; | multikv fields Device, rReq_PS, wReq_PS, rKB_PS, wKB_PS | timechart avg(rReq_PS) avg(wReq_PS) by Device | rename &quot;avg(rReq_PS): disk0&quot; AS &quot;Operations (Read): disk0&quot;, &quot;avg(wReq_PS): disk0&quot; AS &quot;Operations (Write): disk0&quot;
+</code></pre>
+
+<p>Now our columns are renamed accurately, but our search bar is getting crowded. That&rsquo;s okay, because at this point we are finished with adding specific search criteria. If additional disks were found in your reporting, you can easily reformat those columns using the same string we did above, just change the column name between <code>rename</code> and <code>AS</code> to match your rogue column (as many times as you need to).</p>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-sourcetype3.png" alt="forwarder package" /></p>
+
+<p>This gives us a good overview of how to search and an understanding of how we can pull information from Splunk. For the test comparison we are doing here, we will be formatting our search to include multiple hosts, so as to show all of the results of the different reporting types (<em>Operations</em> vs. <em>KB</em>) across both machines on the same visualization. For this we will utilize <em>Report Builder</em> [(Part 3)]() after we have tweaked our search a bit. We will also be adding a custom time to our search in order to be able to look at different points in the encryption process and compare. We will go ahead and add custom time now, so that you can play with your results in the meantime to see if they differ for your own testing.</p>
+
+<p>Once we have the search formatted as above, we can navigate to the right of the search bar and select the green button with time indication text displaying on it. Clicking on the green time button reveals some pre-configured searches, as well as the ability to configure a custom time range to search for results based on our search syntax. Let’s select custom time here. When clicked, we are met with a custom time selection box, shown here:</p>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-customtime.png" alt="forwarder package" /></p>
+
+<p>Select the period that you would like to monitor. For me, I want to monitor the specific 24 hour period in which the FV2 Mac was idle, and then encryption began. *The results to be shown are fairly generic, but for [Part 3](), I will be posting the exact times and dates as reported in order to display accurately compared results. After the search has been formatted, you can see that the results are again displayed in table format, and can be configured for Visualization reporting based on that time period using the <em>Results Chart</em> button from earlier.</p>
+
+<p><img src="https://loyaltyarm.github.io/img/splunk-tableview.png" alt="forwarder package" /></p>
+
+<p>Now that you know how to add custom search times, see what you can come up with. In [Part 3](), we will use <em>Report Builder</em> to build a report based on a specific complex search of the 2 machines, and report on their disk i/o performance during 4 key times in the encryption process. Stay tuned! 📻</p>
+
+                <br>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98500532-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+

@@ -15,7 +15,7 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 <meta property="og:description" content="Recently I ran across a post about setting up Splunk to work with DeployStudio via Noel Balonso. I began using Splunk for reporting on my Apple and Windows (test) imaging environments, to much satisfaction.
 In the meantime, I have also been working with McAfee’s EEMac product for full-disk encryption in OS X. Our org has been comparing its performance to FileVault 2 and trying to make a decision as to whether or not to proceed based on our existing environment for Windows management, which also utilizes McAfee’s FDE product for Windows (formerly Safeboot)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/" />
 
 
 
@@ -39,7 +39,7 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
      Using Splunk for McAfee EEMac/Filevault 2 Comparison – Part 1 
 
 </title>
-<link rel="canonical" href="https://cobbservations.com/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/">
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison--part-1/">
 
 
 
@@ -57,11 +57,11 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 
 
     
-    <link rel="stylesheet" href="https://cobbservations.com/css/reset.css?t=2017-05-14%2023%3a25%3a37.04681167%20-0700%20PDT">
-    <link rel="stylesheet" href="https://cobbservations.com/css/pygments.css?t=2017-05-14%2023%3a25%3a37.04681167%20-0700%20PDT">
-    <link rel="stylesheet" href="https://cobbservations.com/css/main.css?t=2017-05-14%2023%3a25%3a37.04681167%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-05-24%2019%3a01%3a02.505166961%20-0500%20CDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-05-24%2019%3a01%3a02.505166961%20-0500%20CDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-05-24%2019%3a01%3a02.505166961%20-0500%20CDT">
     
-        <link rel="stylesheet" href="https://cobbservations.com/css/override.css?t=2017-05-14%2023%3a25%3a37.04681167%20-0700%20PDT">
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-05-24%2019%3a01%3a02.505166961%20-0500%20CDT">
     
 
 
@@ -69,7 +69,7 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 
 <link rel="shortcut icon"
 
-    href="https://cobbservations.com/img/leaf.ico"
+    href="https://loyaltyarm.github.io/img/leaf.ico"
 
 >
 
@@ -100,19 +100,31 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
                 
                     
                 
+                    
                 
-                <a href="https://cobbservations.com/"><img class="avatar" src="https://cobbservations.com/img/headshot.jpg" srcset="https://cobbservations.com/img/headshot.jpg 1x"></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://loyaltyarm.github.io/"><img class="avatar" src="https://loyaltyarm.github.io/img/headshot.jpg" srcset="https://loyaltyarm.github.io/img/headshot.jpg 1x"></a>
             
-            <a href="https://cobbservations.com/"><div class="name">Nick Cobb</div></a>
+            <a href="https://loyaltyarm.github.io/"><div class="name">Nick Cobb</div></a>
             
               <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
             
             <nav>
                 <ul>
                     
-                        <li class="nav-blog"><a href="https://cobbservations.com/blog/"><span>Blog</span></a></li>
+                        <li class="nav-blog"><a href="https://loyaltyarm.github.io/blog/"><span>Blog</span></a></li>
                     
-                        <li class="nav-about"><a href="https://cobbservations.com/about/"><span>About</span></a></li>
+                        <li class="nav-about"><a href="https://loyaltyarm.github.io/about/"><span>About</span></a></li>
                     
                         <li class="nav-code"><a href="https://linkedin.com/in/loyaltyarm"><span>Resume</span></a></li>
                     
@@ -127,29 +139,29 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
         <div class="content">
 
         
-            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/github.svg" alt="github" /></a>
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/github.svg" alt="github" /></a>
         
 
         
-            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/twitter.svg" alt="twitter" /></a>
-        
-
-        
-
-        
-            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://cobbservations.com/img/linkedin.svg" alt="linkedin" /></a>
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/twitter.svg" alt="twitter" /></a>
         
 
         
 
         
-
-        
-            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://cobbservations.com/img/email.svg" alt="email" /></a>
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/linkedin.svg" alt="linkedin" /></a>
         
 
         
-            <a href="https://cobbservations.com/index.xml"><img class="icon" src="https://cobbservations.com/img/rss.svg" alt="rss" /></a>
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://loyaltyarm.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://loyaltyarm.github.io/index.xml"><img class="icon" src="https://loyaltyarm.github.io/img/rss.svg" alt="rss" /></a>
         
         
         </div>
@@ -168,11 +180,11 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 
 </div>
 
-                    <div class="initials"><a href="https://cobbservations.com"></a></div>
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Thu Jun 27 2013 23:20:18 PDT'>Jun 27, 2013</div>
+                    <div class="date" title='Thu Jun 27 2013 23:20:18 -0700'>Jun 27, 2013</div>
                     
                     
 		    <div class="reading-time"><div class="middot"></div>6 minutes read</div>
@@ -205,8 +217,8 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 
 <p><em>Step 4</em> – Run the installer package for universal forwarder. Nothing out of the ordinary here, just run through the package to install. When finished, move to the next step.</p>
 
-<p><img src="https://cobbservations.com/img/splunk_forwarder_pkg.png" alt="forwarder package" />
-<img src="https://cobbservations.com/img/install_success.png" alt="install success!" /></p>
+<p><img src="https://loyaltyarm.github.io/img/splunk_forwarder_pkg.png" alt="forwarder package" />
+<img src="https://loyaltyarm.github.io/img/install_success.png" alt="install success!" /></p>
 
 <p><em>Step 5</em> – Once the package completes, close the ReadMe in TextEdit (read it first), and close any other items that are open. Copy scripts borrowed from Splunk app for *nix to <code>/Applications/SplunkForwarder/bin/scripts/iostat/</code> on each MBA that will be tested.</p>
 
@@ -240,7 +252,7 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 
 <p><em>Step 11</em> – At this point, your server should be showing your machine as a host. Repeat this process for the second test machine.</p>
 
-<p><img src="https://cobbservations.com/img/machine_shows.png" alt="Machine Shows" /></p>
+<p><img src="https://loyaltyarm.github.io/img/machine_shows.png" alt="Machine Shows" /></p>
 
 <p>If these steps didn’t work for you, there are a few things look at to troubleshoot your deployment. First, you can install the <a href="http://splunk-base.splunk.com/apps/67836/splunk-deployment-monitor">Splunk Deployment Monitor App</a>, which will allow you to view forwarders even if they are not reporting. Second, you can follow <a href="http://docs.splunk.com/Documentation/Splunk/latest/Troubleshooting/Cantfinddata#Are_you_using_forwarders.3F">these instructions</a> to search the internal indexes to see if there are problems with your forwarders. Feel free to post comments if you need help, and I will assist!</p>
 
@@ -258,7 +270,7 @@ In the meantime, I have also been working with McAfee’s EEMac product for full
 <p>Stay tuned for [Part 2]()! I will be posting the search mechanisms for the Disk I/O, and will show how to create a visualization based on the data for each search. If you want to become more familiar with Splunk in the meantime, you can check out <a href="https://github.com/loyaltyarm/splunk">my Splunk search repository on Github</a>.</p>
 
                 <br>
-		<p><a href="https://cobbservations.com/blog/">Back to posts</a></p>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
             </div>
             <br>
             <div class="disqus">
