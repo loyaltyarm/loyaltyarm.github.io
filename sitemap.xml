@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/blog/macos-as-a-service-for-mobile-development-at-uber/</loc>
+    <lastmod>2017-06-14T23:27:24-04:00</lastmod>
+  </url>
   
   <url>
     <loc>https://loyaltyarm.github.io/about/</loc>
@@ -28,7 +34,7 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/blog/</loc>
-    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <lastmod>2017-06-14T23:27:24-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,12 +63,13 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/</loc>
-    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <lastmod>2017-06-14T23:27:24-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://loyaltyarm.github.io/tags/</loc>
+    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -9,16 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Nick Cobb">
-<meta name="description" content="">
+<meta name="description" content="I recently had the privilege to give a talk at MacDevOpsYVR 2017 about quite a large undertaking of ours at Uber last year. Myself and two other engineers, Olivier Lessard and Kenneth Peterson built a massive macOS virtualization platform to support iOS development efforts at Uber during the Rider app rewrite. This infrastructure facilitates the automated continuous integration platform used to build and test Uber&rsquo;s mobile applications.
+Check out the talk below:">
 
-<meta property="og:title" content="Web" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://loyaltyarm.github.io/categories/web/" />
+<meta property="og:title" content="macOS as a Service for Mobile Development at Uber" />
+<meta property="og:description" content="I recently had the privilege to give a talk at MacDevOpsYVR 2017 about quite a large undertaking of ours at Uber last year. Myself and two other engineers, Olivier Lessard and Kenneth Peterson built a massive macOS virtualization platform to support iOS development efforts at Uber during the Rider app rewrite. This infrastructure facilitates the automated continuous integration platform used to build and test Uber&rsquo;s mobile applications.
+Check out the talk below:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/macos-as-a-service-for-mobile-development-at-uber/" />
 
 
 
-<meta property="og:updated_time" content="2017-04-09T23:22:59-04:00"/>
+<meta property="article:published_time" content="2017-06-14T23:27:24-04:00"/>
+<meta property="article:modified_time" content="2017-06-14T23:27:24-04:00"/>
+
 
 
 
@@ -33,10 +37,10 @@
 <title>
 
 
-     Web 
+     macOS as a Service for Mobile Development at Uber 
 
 </title>
-<link rel="canonical" href="https://loyaltyarm.github.io/categories/web/">
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/macos-as-a-service-for-mobile-development-at-uber/">
 
 
 
@@ -54,11 +58,11 @@
 
 
     
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-14%2023%3a38%3a05.531264775%20-0400%20EDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-14%2023%3a38%3a05.531264775%20-0400%20EDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-14%2023%3a38%3a05.531264775%20-0400%20EDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-14%2023%3a38%3a05.52080422%20-0400%20EDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-14%2023%3a38%3a05.52080422%20-0400%20EDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-14%2023%3a38%3a05.52080422%20-0400%20EDT">
     
-        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-14%2023%3a38%3a05.531264775%20-0400%20EDT">
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-14%2023%3a38%3a05.52080422%20-0400%20EDT">
     
 
 
@@ -71,8 +75,6 @@
 >
 
 
-
-  <link href="https://loyaltyarm.github.io/categories/web/index.xml" rel="alternate" type="application/rss+xml" title="Nick Cobb" />
 
 
 </head>
@@ -167,36 +169,47 @@
     </div>
 </section>
 
-<section class="main">
+
+<section class="main post non-narrow zero-top-spacing">
     <div class="container">
         <div class="content">
-            
-	    <div class="page-heading">Blog</div>
-            <ul>
-                
-                
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-04-09T23:22:59-04:00'>Apr 9, 2017</time></span>
-    
-    <a href="https://loyaltyarm.github.io/about/"><span>About</span></a>
-</li>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-04-09T23:22:59-04:00'>Apr 9, 2017</time></span>
-    
-    <a href="https://loyaltyarm.github.io/blog/is-this-thing-on/"><span>Is this thing on?</span></a>
-</li>
+    macOS as a Service for Mobile Development at Uber
 
+</div>
+
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
+                </div>
+                <div class="meta">
                     
+                    <div class="date" title='Wed Jun 14 2017 23:27:24 EDT'>Jun 14, 2017</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I recently had the privilege to give a talk at <a href="https://macdevops.ca">MacDevOpsYVR 2017</a> about quite a large undertaking of ours at Uber last year. Myself and two other engineers, <a href="https://www.linkedin.com/in/olivier-lessard-96855235/">Olivier Lessard</a> and <a href="https://www.linkedin.com/in/kenneth-peterson-06a80a56/">Kenneth Peterson</a> built a massive macOS virtualization platform to support iOS development efforts at Uber during the Rider app rewrite. This infrastructure facilitates the automated continuous integration platform used to build and test Uber&rsquo;s mobile applications.</p>
+
+<p>Check out the talk below:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gjbwu8Iu3Xs" frameborder="0" allowfullscreen></iframe>
+
+                <br>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
                 
-            </ul>
+            </div>
         </div>
     </div>
 </section>
+
 
 
 <script>
@@ -220,5 +233,4 @@ ga('send', 'pageview');
 
 </body>
 </html>
-
 
