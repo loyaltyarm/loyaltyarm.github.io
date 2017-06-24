@@ -17,6 +17,11 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/blog/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/how-to-remove-the-kids-profile-from-your-netflix-account/</loc>
     <lastmod>2016-11-03T00:34:17-07:00</lastmod>
   </url>
@@ -43,7 +48,13 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/tags/apple/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/apple/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -55,6 +66,19 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/categories/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/configuration/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/configuration/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,6 +113,18 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/ios/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/ios/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/ios-7/</loc>
     <lastmod>2014-05-06T01:27:26-07:00</lastmod>
     <priority>0</priority>
@@ -97,6 +133,18 @@
   <url>
     <loc>https://loyaltyarm.github.io/categories/ios-7/</loc>
     <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/mdm/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/mdm/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,7 +168,7 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/tags/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   

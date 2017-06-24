@@ -9,17 +9,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Nick Cobb">
-<meta name="description" content="An initial post about moving to Hugo and to help get things in working order.">
+<meta name="description" content="Hey all!
+I&rsquo;ve just opened rdar://30582319 in response to some testing I&rsquo;ve been doing to attempt to manage the auto-lock settings on various iOS devices used as kiosks. In our case, we want to be able to set the display timeout to &lsquo;15 minutes&rsquo; or ideally &lsquo;Never&rsquo;, but not require the device to have a passcode enabled.
+I&rsquo;ve been testing this with a custom config profile, of which I&rsquo;ve created a gist here.">
 
-<meta property="og:title" content="Is this thing on?" />
-<meta property="og:description" content="An initial post about moving to Hugo and to help get things in working order." />
+<meta property="og:title" content="Enhancement: iOS MDM should allow display timeout management without passcode" />
+<meta property="og:description" content="Hey all!
+I&rsquo;ve just opened rdar://30582319 in response to some testing I&rsquo;ve been doing to attempt to manage the auto-lock settings on various iOS devices used as kiosks. In our case, we want to be able to set the display timeout to &lsquo;15 minutes&rsquo; or ideally &lsquo;Never&rsquo;, but not require the device to have a passcode enabled.
+I&rsquo;ve been testing this with a custom config profile, of which I&rsquo;ve created a gist here." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://loyaltyarm.github.io/blog/is-this-thing-on/" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode/" />
 
 
 
-<meta property="article:published_time" content="2017-04-09T23:22:59-04:00"/>
-<meta property="article:modified_time" content="2017-04-09T23:22:59-04:00"/>
+<meta property="article:published_time" content="2017-02-17T02:01:00-07:00"/>
+<meta property="article:modified_time" content="2017-02-17T02:01:00-07:00"/>
 
 
 
@@ -35,10 +39,10 @@
 <title>
 
 
-     Is this thing on? 
+     Enhancement: iOS MDM should allow display timeout management without passcode 
 
 </title>
-<link rel="canonical" href="https://loyaltyarm.github.io/blog/is-this-thing-on/">
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode/">
 
 
 
@@ -56,11 +60,11 @@
 
 
     
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-24%2002%3a08%3a23.291339453%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-24%2002%3a08%3a23.291339453%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-24%2002%3a08%3a23.291339453%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-24%2002%3a08%3a23.291341185%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-24%2002%3a08%3a23.291341185%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-24%2002%3a08%3a23.291341185%20-0700%20PDT">
     
-        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-24%2002%3a08%3a23.291339453%20-0700%20PDT">
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-24%2002%3a08%3a23.291341185%20-0700%20PDT">
     
 
 
@@ -175,7 +179,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    Is this thing on?
+    Enhancement: iOS MDM should allow display timeout management without passcode
 
 </div>
 
@@ -183,7 +187,7 @@
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Sun Apr 9 2017 23:22:59 -0400'>Apr 9, 2017</div>
+                    <div class="date" title='Fri Feb 17 2017 02:01:00 -0700'>Feb 17, 2017</div>
                     
                     
 		    <div class="reading-time"><div class="middot"></div>One minute read</div>
@@ -191,15 +195,22 @@
                 </div>
             </div>
             <div class="markdown">
-                
+                <p>Hey all!</p>
 
-<h1 id="wat">Wat</h1>
+<p>I&rsquo;ve just opened <a href="http://www.openradar.me/30582319">rdar://30582319</a> in response to some testing I&rsquo;ve been doing to attempt to manage the auto-lock settings on various iOS devices used as kiosks. In our case, we want to be able to set the display timeout to &lsquo;15 minutes&rsquo; or ideally &lsquo;Never&rsquo;, but not require the device to have a passcode enabled.</p>
 
-<p>This is the initial post in a series of steps I am taking to move <a href="https://cobbservations.wordpress.com">Cobbservations</a> to a site powered by <a href="https://gohugo.io">Hugo</a>. I stumbled across <code>hugo</code> recently while working with the maintainers of the <a href="https://github.com/micromdm"><code>micromdm</code></a> project. The <a href="https://micromdm.io">beautiful site</a> hosting the documentation is build with <code>hugo</code>, and given the looks, I just <em>had</em> to try it.</p>
+<p>I&rsquo;ve been testing this with a custom config profile, of which I&rsquo;ve created a <a href="https://gist.github.com/loyaltyarm/16deb0866697c3f2e3e33784453a393c">gist here</a>.</p>
 
-<p>Somewhat separately, I&rsquo;ve been using <a href="http://www.markdowntutorial.com">Markdown</a> for quite a while and have finally gotten around to enjoying it more than standard wordpress-style content for blogging. I even recently re-formatted all of my <a href="https://github.com/loyaltyarm/splunk">splunk repo</a> searches to a more uniform Markdown syntax. So, I&rsquo;m undertaking a project of moving my blog contents over to Github hosting and plan to use <code>hugo</code> to maintain it.</p>
+<p>Some interesting additional behavior I&rsquo;ve seen on iOS 9.3 and iOS 10.x is also found in the radar ticket. I&rsquo;ve seen two problem behaviors:</p>
 
-<p>Lastly, one of the main features I like about Wordpress is its social network integration. This makes it super easy to update your LinkedIn network or Twitter followers that you&rsquo;ve published a new post. I&rsquo;m going to try to include this functionality in the <code>hugo</code> site when I get more time to figure out how to get that going.</p>
+<ul>
+<li>the iOS device requires a passcode despite the <code>forcePIN</code> key being set to False.</li>
+<li>the iOS device does not recognize the updated integer under the <code>maxInactivity</code> key.</li>
+</ul>
+
+<p>Ideally I&rsquo;d like to see display timeout management broken out separately from passcode policy, or have the device/OS recognize that the <code>forcePIN</code> key is set to false and not require a passcode when the profile is installed.</p>
+
+<p>If anyone has been able to manage display lock separately from the passcode I&rsquo;d be interested in hearing about your success.</p>
 
                 <br>
 		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
@@ -209,9 +220,9 @@
                 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'cobbservations';
-    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
-    var disqus_title = 'Is this thing on?';
-    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode\/';
+    var disqus_title = 'Enhancement: iOS MDM should allow display timeout management without passcode';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

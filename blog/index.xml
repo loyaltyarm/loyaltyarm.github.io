@@ -32,6 +32,17 @@ Somewhat separately, I&amp;rsquo;ve been using Markdown for quite a while and ha
     </item>
     
     <item>
+      <title>Enhancement: iOS MDM should allow display timeout management without passcode</title>
+      <link>https://loyaltyarm.github.io/blog/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode/</link>
+      <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/enhancement-ios-mdm-should-allow-display-timeout-management-without-passcode/</guid>
+      <description>Hey all!
+I&amp;rsquo;ve just opened rdar://30582319 in response to some testing I&amp;rsquo;ve been doing to attempt to manage the auto-lock settings on various iOS devices used as kiosks. In our case, we want to be able to set the display timeout to &amp;lsquo;15 minutes&amp;rsquo; or ideally &amp;lsquo;Never&amp;rsquo;, but not require the device to have a passcode enabled.
+I&amp;rsquo;ve been testing this with a custom config profile, of which I&amp;rsquo;ve created a gist here.</description>
+    </item>
+    
+    <item>
       <title>How to remove the Kids profile from your Netflix account</title>
       <link>https://loyaltyarm.github.io/blog/how-to-remove-the-kids-profile-from-your-netflix-account/</link>
       <pubDate>Thu, 03 Nov 2016 00:34:17 -0700</pubDate>

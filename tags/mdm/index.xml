@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apple on Nick Cobb</title>
-    <link>https://loyaltyarm.github.io/tags/apple/</link>
-    <description>Recent content in Apple on Nick Cobb</description>
+    <title>Mdm on Nick Cobb</title>
+    <link>https://loyaltyarm.github.io/tags/mdm/</link>
+    <description>Recent content in Mdm on Nick Cobb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 17 Feb 2017 02:01:00 -0700</lastBuildDate>
     
-	<atom:link href="https://loyaltyarm.github.io/tags/apple/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://loyaltyarm.github.io/tags/mdm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>Hey all!
 I&amp;rsquo;ve just opened rdar://30582319 in response to some testing I&amp;rsquo;ve been doing to attempt to manage the auto-lock settings on various iOS devices used as kiosks. In our case, we want to be able to set the display timeout to &amp;lsquo;15 minutes&amp;rsquo; or ideally &amp;lsquo;Never&amp;rsquo;, but not require the device to have a passcode enabled.
 I&amp;rsquo;ve been testing this with a custom config profile, of which I&amp;rsquo;ve created a gist here.</description>
-    </item>
-    
-    <item>
-      <title>Centering GMSMapView on User&#39;s Current Location - Google Maps SDK for iOS</title>
-      <link>https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/</link>
-      <pubDate>Tue, 06 May 2014 01:27:26 -0700</pubDate>
-      
-      <guid>https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/</guid>
-      <description>I&amp;rsquo;m working on a personal project that involves the use of the Google Maps SDK for iOS. As I am still picking up various tidbits and skills related to iOS development, I did a bit of learning first in order to get started. Code School recently opened up a free channel for learning about using Google Maps SDK for iOS, and that has been pretty helpful. According to the Google Maps SDK documentation, there are various ways to create a mapView and assign its camera position, or force a camera update.</description>
     </item>
     
   </channel>

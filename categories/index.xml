@@ -6,9 +6,28 @@
     <description>Recent content in Categories on Nick Cobb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
+    <lastBuildDate>Fri, 17 Feb 2017 02:01:00 -0700</lastBuildDate>
     
 	<atom:link href="https://loyaltyarm.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apple</title>
+      <link>https://loyaltyarm.github.io/categories/apple/</link>
+      <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://loyaltyarm.github.io/categories/configuration/</link>
+      <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/configuration/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Development</title>
@@ -29,11 +48,29 @@
     </item>
     
     <item>
+      <title>Ios</title>
+      <link>https://loyaltyarm.github.io/categories/ios/</link>
+      <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ios 7</title>
       <link>https://loyaltyarm.github.io/categories/ios-7/</link>
       <pubDate>Tue, 06 May 2014 01:27:26 -0700</pubDate>
       
       <guid>https://loyaltyarm.github.io/categories/ios-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mdm</title>
+      <link>https://loyaltyarm.github.io/categories/mdm/</link>
+      <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/mdm/</guid>
       <description></description>
     </item>
     
