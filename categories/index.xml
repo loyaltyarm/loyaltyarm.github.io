@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Ci</title>
+      <link>https://loyaltyarm.github.io/categories/ci/</link>
+      <pubDate>Sat, 12 Nov 2016 11:15:06 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Configuration</title>
       <link>https://loyaltyarm.github.io/categories/configuration/</link>
       <pubDate>Fri, 17 Feb 2017 02:01:00 -0700</pubDate>
@@ -32,7 +41,7 @@
     <item>
       <title>Development</title>
       <link>https://loyaltyarm.github.io/categories/development/</link>
-      <pubDate>Tue, 06 May 2014 01:27:26 -0700</pubDate>
+      <pubDate>Sat, 12 Nov 2016 11:15:06 -0700</pubDate>
       
       <guid>https://loyaltyarm.github.io/categories/development/</guid>
       <description></description>
@@ -62,6 +71,15 @@
       <pubDate>Tue, 06 May 2014 01:27:26 -0700</pubDate>
       
       <guid>https://loyaltyarm.github.io/categories/ios-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>https://loyaltyarm.github.io/categories/macos/</link>
+      <pubDate>Sat, 12 Nov 2016 11:15:06 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/categories/macos/</guid>
       <description></description>
     </item>
     

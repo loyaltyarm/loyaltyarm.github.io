@@ -9,17 +9,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Nick Cobb">
-<meta name="description" content="An initial post about moving to Hugo and to help get things in working order.">
+<meta name="description" content="While fumbling my way through a bootstrapping workflow for macOS Sierra, I found that recent updates to Homebrew now require the latest version of Xcode when the machine in question is running macOS Sierra.
+It looks like the check boils down to a scenario when the relevant machine is running macOS Sierra AND does NOT have the CI attribute.
+If the CI attribute is specified, then the Homebrew check will proceed and allow a different version of Xcode to be installed.">
 
-<meta property="og:title" content="Is this thing on?" />
-<meta property="og:description" content="An initial post about moving to Hugo and to help get things in working order." />
+<meta property="og:title" content="Homebrew on Sierra now requires the latest Xcode" />
+<meta property="og:description" content="While fumbling my way through a bootstrapping workflow for macOS Sierra, I found that recent updates to Homebrew now require the latest version of Xcode when the machine in question is running macOS Sierra.
+It looks like the check boils down to a scenario when the relevant machine is running macOS Sierra AND does NOT have the CI attribute.
+If the CI attribute is specified, then the Homebrew check will proceed and allow a different version of Xcode to be installed." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://loyaltyarm.github.io/blog/is-this-thing-on/" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/homebrew-on-sierra-now-requires-the-latest-xcode/" />
 
 
 
-<meta property="article:published_time" content="2017-04-09T23:22:59-04:00"/>
-<meta property="article:modified_time" content="2017-04-09T23:22:59-04:00"/>
+<meta property="article:published_time" content="2016-11-12T11:15:06-07:00"/>
+<meta property="article:modified_time" content="2016-11-12T11:15:06-07:00"/>
 
 
 
@@ -35,10 +39,10 @@
 <title>
 
 
-     Is this thing on? 
+     Homebrew on Sierra now requires the latest Xcode 
 
 </title>
-<link rel="canonical" href="https://loyaltyarm.github.io/blog/is-this-thing-on/">
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/homebrew-on-sierra-now-requires-the-latest-xcode/">
 
 
 
@@ -56,11 +60,11 @@
 
 
     
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-24%2011%3a23%3a36.373683419%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-24%2011%3a23%3a36.373683419%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-24%2011%3a23%3a36.373683419%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-24%2011%3a23%3a36.376708299%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-24%2011%3a23%3a36.376708299%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-24%2011%3a23%3a36.376708299%20-0700%20PDT">
     
-        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-24%2011%3a23%3a36.373683419%20-0700%20PDT">
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-24%2011%3a23%3a36.376708299%20-0700%20PDT">
     
 
 
@@ -177,7 +181,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    Is this thing on?
+    Homebrew on Sierra now requires the latest Xcode
 
 </div>
 
@@ -185,7 +189,7 @@
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Sun Apr 9 2017 23:22:59 -0400'>Apr 9, 2017</div>
+                    <div class="date" title='Sat Nov 12 2016 11:15:06 -0700'>Nov 12, 2016</div>
                     
                     
 		    <div class="reading-time"><div class="middot"></div>One minute read</div>
@@ -193,15 +197,15 @@
                 </div>
             </div>
             <div class="markdown">
-                
+                <p>While fumbling my way through a bootstrapping workflow for macOS Sierra, I found that recent updates to Homebrew <a href="http://discourse.brew.sh/t/xcode-8-0-is-outdated/346">now require the latest version of Xcode</a> when the machine in question is running macOS Sierra.</p>
 
-<h1 id="wat">Wat</h1>
+<p>It looks like <a href="https://github.com/Homebrew/brew/blob/564fa8867dd865c686d243ba48c202e0cb6a35fe/Library/Homebrew/extend/os/mac/diagnostic.rb#L17">the check</a> boils down to a scenario when the relevant machine is running macOS Sierra AND does NOT have the CI attribute.</p>
 
-<p>This is the initial post in a series of steps I am taking to move <a href="https://cobbservations.wordpress.com">Cobbservations</a> to a site powered by <a href="https://gohugo.io">Hugo</a>. I stumbled across <code>hugo</code> recently while working with the maintainers of the <a href="https://github.com/micromdm"><code>micromdm</code></a> project. The <a href="https://micromdm.io">beautiful site</a> hosting the documentation is build with <code>hugo</code>, and given the looks, I just <em>had</em> to try it.</p>
+<p><img src="https://loyaltyarm.github.io/img/homebrew-check.png" alt="homebrew-check" /></p>
 
-<p>Somewhat separately, I&rsquo;ve been using <a href="http://www.markdowntutorial.com">Markdown</a> for quite a while and have finally gotten around to enjoying it more than standard wordpress-style content for blogging. I even recently re-formatted all of my <a href="https://github.com/loyaltyarm/splunk">splunk repo</a> searches to a more uniform Markdown syntax. So, I&rsquo;m undertaking a project of moving my blog contents over to Github hosting and plan to use <code>hugo</code> to maintain it.</p>
+<p>If the CI attribute is specified, then the Homebrew check will proceed and allow a different version of Xcode to be installed. I imagine the Homebrew maintainers will continue to monitor the latest versions of Xcode and update the check to look for the most recent version. For reference, you can check out the discussions around this topic <a href="https://github.com/Homebrew/brew/commit/12aad5c65fee39c5f044e39ca1efcbed58aebd39#comments">here</a> and <a href="https://github.com/Homebrew/brew/issues/972">here</a> on the thinking around this change.</p>
 
-<p>Lastly, one of the main features I like about Wordpress is its social network integration. This makes it super easy to update your LinkedIn network or Twitter followers that you&rsquo;ve published a new post. I&rsquo;m going to try to include this functionality in the <code>hugo</code> site when I get more time to figure out how to get that going.</p>
+<p>In a future post, I&rsquo;ll talk about how to bootstrap a machine using tooling like Puppet, and how to expose this environment variable to the user environment and to Puppet so that workflows to bootstrap machines proceed without issue.</p>
 
                 <br>
 		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
@@ -211,9 +215,9 @@
                 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'cobbservations';
-    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
-    var disqus_title = 'Is this thing on?';
-    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/homebrew-on-sierra-now-requires-the-latest-xcode\/';
+    var disqus_title = 'Homebrew on Sierra now requires the latest Xcode';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/homebrew-on-sierra-now-requires-the-latest-xcode\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

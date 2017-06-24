@@ -22,6 +22,11 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/blog/homebrew-on-sierra-now-requires-the-latest-xcode/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/how-to-remove-the-kids-profile-from-your-netflix-account/</loc>
     <lastmod>2016-11-03T00:34:17-07:00</lastmod>
   </url>
@@ -71,6 +76,18 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/ci/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/ci/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/configuration/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
@@ -90,7 +107,7 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/categories/development/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -109,6 +126,12 @@
   <url>
     <loc>https://loyaltyarm.github.io/categories/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/homebrew/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,6 +160,12 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/categories/macos/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/mdm/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
@@ -155,8 +184,14 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/sierra/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/software/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,6 +216,12 @@
   <url>
     <loc>https://loyaltyarm.github.io/categories/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/xcode/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ci on Nick Cobb</title>
+    <link>https://loyaltyarm.github.io/tags/ci/</link>
+    <description>Recent content in Ci on Nick Cobb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 12 Nov 2016 11:15:06 -0700</lastBuildDate>
+    
+	<atom:link href="https://loyaltyarm.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Homebrew on Sierra now requires the latest Xcode</title>
+      <link>https://loyaltyarm.github.io/blog/homebrew-on-sierra-now-requires-the-latest-xcode/</link>
+      <pubDate>Sat, 12 Nov 2016 11:15:06 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/homebrew-on-sierra-now-requires-the-latest-xcode/</guid>
+      <description>While fumbling my way through a bootstrapping workflow for macOS Sierra, I found that recent updates to Homebrew now require the latest version of Xcode when the machine in question is running macOS Sierra.
+It looks like the check boils down to a scenario when the relevant machine is running macOS Sierra AND does NOT have the CI attribute.
+If the CI attribute is specified, then the Homebrew check will proceed and allow a different version of Xcode to be installed.</description>
+    </item>
+    
+  </channel>
+</rss>
