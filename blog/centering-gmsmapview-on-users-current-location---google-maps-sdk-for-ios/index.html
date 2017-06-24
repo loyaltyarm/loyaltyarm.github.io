@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Nick Cobb">
+<meta name="description" content="I&rsquo;m working on a personal project that involves the use of the Google Maps SDK for iOS. As I am still picking up various tidbits and skills related to iOS development, I did a bit of learning first in order to get started. Code School recently opened up a free channel for learning about using Google Maps SDK for iOS, and that has been pretty helpful. According to the Google Maps SDK documentation, there are various ways to create a mapView and assign its camera position, or force a camera update.">
+
+<meta property="og:title" content="Centering GMSMapView on User&#39;s Current Location - Google Maps SDK for iOS" />
+<meta property="og:description" content="I&rsquo;m working on a personal project that involves the use of the Google Maps SDK for iOS. As I am still picking up various tidbits and skills related to iOS development, I did a bit of learning first in order to get started. Code School recently opened up a free channel for learning about using Google Maps SDK for iOS, and that has been pretty helpful. According to the Google Maps SDK documentation, there are various ways to create a mapView and assign its camera position, or force a camera update." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/" />
+
+
+
+<meta property="article:published_time" content="2014-05-06T01:27:26-07:00"/>
+<meta property="article:modified_time" content="2014-05-06T01:27:26-07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Centering GMSMapView on User&#39;s Current Location - Google Maps SDK for iOS 
+
+</title>
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-24%2001%3a50%3a19.362722799%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-24%2001%3a50%3a19.362722799%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-24%2001%3a50%3a19.362722799%20-0700%20PDT">
+    
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-24%2001%3a50%3a19.362722799%20-0700%20PDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://loyaltyarm.github.io/img/leaf.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://loyaltyarm.github.io/"><img class="avatar" src="https://loyaltyarm.github.io/img/headshot.jpg" srcset="https://loyaltyarm.github.io/img/headshot.jpg 1x"></a>
+            
+            <a href="https://loyaltyarm.github.io/"><div class="name">Nick Cobb</div></a>
+            
+              <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://loyaltyarm.github.io/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://loyaltyarm.github.io/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://linkedin.com/in/loyaltyarm"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://loyaltyarm.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://loyaltyarm.github.io/index.xml"><img class="icon" src="https://loyaltyarm.github.io/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Centering GMSMapView on User&#39;s Current Location - Google Maps SDK for iOS
+
+</div>
+
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue May 6 2014 01:27:26 PDT'>May 6, 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I&rsquo;m working on a personal project that involves the use of the Google Maps SDK for iOS. As I am still picking up various tidbits and skills related to iOS development, I did a bit of learning first in order to get started. <a href="https://www.codeschool.com/">Code School</a> recently opened up a free channel for learning about <a href="https://www.codeschool.com/courses/exploring-google-maps-for-ios">using Google Maps SDK for iOS</a>, and that has been pretty helpful. According to the <a href="https://developers.google.com/maps/documentation/ios/">Google Maps SDK documentation</a>, there are various ways to create a mapView and assign its camera position, or force a camera update. You can check out the documentation and tutorials <a href="https://developers.google.com/maps/documentation/ios/">here</a> for yourself. It is a lot of reading and maybe a bit much to try to cover everything. Watching the tutorial from Code School above should get you started. After learning the basics about creating the GMSMapView, I learned from Stack Overflow that if I wanted to get the user&rsquo;s location, I would have to use <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html">key-value observing</a>. The <a href="http://stackoverflow.com/questions/20607358/could-not-get-current-location-using-google-map-api-gmsmapview/20611812#20611812">thread from Stack Overflow is linked here</a>, and details hows to get the value of the GMSMapView myLocation property, if enabled. I modified it a bit, to fit my use case.</p>
+
+<p>To preface a bit I created, as shown in the Code School demonstrations, my <code>GMSMapView</code> within the <code>viewDidLoad</code> method of my View Controller, in this case, <code>BGMapVC</code>. Since the <code>GMSMapView</code> is already created and has settings applied, it will be shown when the user selects my scene while using the device. Again, the trick here is to get the value of the myLocation property and set the map&rsquo;s camera to point at it upon the view appearing. You can find how I implemented this below:</p>
+
+<p>First, I make sure to set the delegate in my header file:</p>
+
+<pre><code>@interface BGMapVC : UIViewController &lt;GMSMapViewDelegate, CLLocationManagerDelegate&gt;
+</code></pre>
+
+<p>Then I set a property for my <code>mapView</code>:</p>
+
+<pre><code>@property (nonatomic, strong) GMSMapView *mapView;
+</code></pre>
+
+<p>Then, where the answer shows to create the observer within the viewDidLoad method, I have done so within the <code>viewWillAppear</code> method, so that it is present prior to my interface loading.</p>
+
+<pre><code>- (void)viewWillAppear:(BOOL)animated {
+    [self.mapView addObserver:self forKeyPath:@&quot;myLocation&quot; options:0 context:nil];
+}
+</code></pre>
+
+<p>Then, call the <code>dealloc</code> method to remove the observer:</p>
+
+<pre><code>- (void)dealloc {
+    [self.mapView removeObserver:self forKeyPath:@&quot;myLocation&quot;];
+}
+</code></pre>
+
+<p>Lastly, in the <code>observeValueForKeyPath:keyPath:ofObject:change:context:</code> method, I create the reference to the GMSMapView&rsquo;s <code>myLocation</code> property using a CLLocation object, and then create a target for the GMSMapView to utilize when updating the camera on the map view (CLLocationCoordinate2D). Then, at the end of the method, I force the <code>mapView</code> to update. Since the observer is being called from the <code>viewWillAppear</code> method, this tells the map view to update the location prior to the view being loaded. Code below:</p>
+
+<pre><code>- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@&quot;myLocation&quot;]) {
+        CLLocation *location = [object myLocation];
+        //...
+        NSLog(@&quot;Location, %@,&quot;, location);
+
+        CLLocationCoordinate2D target =
+        CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+
+        [self.mapView animateToLocation:target];
+        [self.mapView animateToZoom:17];
+    }
+}
+</code></pre>
+
+<p>At the end, the <code>animateToLocation:</code> and <code>animateToZoom:</code> calls update the map&rsquo;s view accordingly.</p>
+
+<p>As always, open to feedback, suggestions, corrections, questions, or criticisms. I am trying to learn and I feel the best way to learn is to document problems I researched while learning and get feedback. I am particularly interested in whether or not there are opportunities for better memory management and if this could be done without KVO.</p>
+
+                <br>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cobbservations';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios\/';
+    var disqus_title = 'Centering GMSMapView on User\x27s Current Location - Google Maps SDK for iOS';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98500532-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+</body>
+</html>
+

@@ -22,6 +22,11 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/</loc>
     <lastmod>2013-07-13T17:53:26-05:00</lastmod>
   </url>
@@ -37,6 +42,12 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/apple/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/</loc>
     <lastmod>2017-06-14T23:27:24-04:00</lastmod>
     <priority>0</priority>
@@ -44,6 +55,18 @@
   
   <url>
     <loc>https://loyaltyarm.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/development/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/development/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -66,14 +89,38 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/ios-7/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/ios-7/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/</loc>
     <lastmod>2017-06-14T23:27:24-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/software/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/categories/software/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/</loc>
-    <lastmod>2017-04-09T23:22:59-04:00</lastmod>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
     <priority>0</priority>
   </url>
   
