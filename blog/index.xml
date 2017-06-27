@@ -65,6 +65,15 @@ This came up on Twitter yesterday and I had previously dug into this a good whil
     </item>
     
     <item>
+      <title>Fixing Persistent Notifications on iOS 10</title>
+      <link>https://loyaltyarm.github.io/blog/fixing-persistent-notifications-on-ios-10/</link>
+      <pubDate>Thu, 27 Oct 2016 22:03:31 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/fixing-persistent-notifications-on-ios-10/</guid>
+      <description>After upgrading to iOS 10, quite a few people have noticed a rather annoying change in the behavior of notifications on their devices. In particular, banner-style notifications that were automatically dismissed in previous versions of iOS, seem to stay on the screen until an explicit action is taken to snooze or dismiss them. Well, if they seem that way, it&amp;rsquo;s because that&amp;rsquo;s how they were designed. In fact, notifications can carry three styles and have for quite some time on iOS:</description>
+    </item>
+    
+    <item>
       <title>Centering GMSMapView on User&#39;s Current Location - Google Maps SDK for iOS</title>
       <link>https://loyaltyarm.github.io/blog/centering-gmsmapview-on-users-current-location---google-maps-sdk-for-ios/</link>
       <pubDate>Tue, 06 May 2014 01:27:26 -0700</pubDate>
