@@ -102,6 +102,16 @@ This came up on Twitter yesterday and I had previously dug into this a good whil
     </item>
     
     <item>
+      <title>Using &#39;curl&#39; behind a Proxy</title>
+      <link>https://loyaltyarm.github.io/blog/using-curl-behind-a-proxy/</link>
+      <pubDate>Fri, 15 Nov 2013 22:47:03 -0700</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/using-curl-behind-a-proxy/</guid>
+      <description>This is a relatively stupid problem that took me a few seconds to figure out, but I figured I would post on it anyway. I have recently been working with createosxinstallpkg, part of the tool set included to administer Munki, an open source managed software update server (and client) for OS X machines.
+I used createosxinstallpkg last year when I needed to build a never-booted upgrade package to for 10.7 clients to upgrade to 10.</description>
+    </item>
+    
+    <item>
       <title>Using Splunk for McAfee EEMac/Filevault 2 Comparison - Part 2</title>
       <link>https://loyaltyarm.github.io/blog/using-splunk-for-mcafee-eemac/filevault-2-comparison---part-2/</link>
       <pubDate>Sat, 13 Jul 2013 17:53:26 -0500</pubDate>

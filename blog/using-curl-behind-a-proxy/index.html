@@ -9,17 +9,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Nick Cobb">
-<meta name="description" content="An initial post about moving to Hugo and to help get things in working order.">
+<meta name="description" content="This is a relatively stupid problem that took me a few seconds to figure out, but I figured I would post on it anyway. I have recently been working with createosxinstallpkg, part of the tool set included to administer Munki, an open source managed software update server (and client) for OS X machines.
+I used createosxinstallpkg last year when I needed to build a never-booted upgrade package to for 10.7 clients to upgrade to 10.">
 
-<meta property="og:title" content="Is this thing on?" />
-<meta property="og:description" content="An initial post about moving to Hugo and to help get things in working order." />
+<meta property="og:title" content="Using &#39;curl&#39; behind a Proxy" />
+<meta property="og:description" content="This is a relatively stupid problem that took me a few seconds to figure out, but I figured I would post on it anyway. I have recently been working with createosxinstallpkg, part of the tool set included to administer Munki, an open source managed software update server (and client) for OS X machines.
+I used createosxinstallpkg last year when I needed to build a never-booted upgrade package to for 10.7 clients to upgrade to 10." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://loyaltyarm.github.io/blog/is-this-thing-on/" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/using-curl-behind-a-proxy/" />
 
 
 
-<meta property="article:published_time" content="2017-04-09T23:22:59-04:00"/>
-<meta property="article:modified_time" content="2017-04-09T23:22:59-04:00"/>
+<meta property="article:published_time" content="2013-11-15T22:47:03-07:00"/>
+<meta property="article:modified_time" content="2013-11-15T22:47:03-07:00"/>
 
 
 
@@ -35,10 +37,10 @@
 <title>
 
 
-     Is this thing on? 
+     Using &#39;curl&#39; behind a Proxy 
 
 </title>
-<link rel="canonical" href="https://loyaltyarm.github.io/blog/is-this-thing-on/">
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/using-curl-behind-a-proxy/">
 
 
 
@@ -56,11 +58,11 @@
 
 
     
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-26%2023%3a00%3a22.349230585%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-26%2023%3a00%3a22.349230585%20-0700%20PDT">
-    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-26%2023%3a00%3a22.349230585%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-06-26%2023%3a00%3a22.355340133%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-06-26%2023%3a00%3a22.355340133%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-06-26%2023%3a00%3a22.355340133%20-0700%20PDT">
     
-        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-26%2023%3a00%3a22.349230585%20-0700%20PDT">
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-06-26%2023%3a00%3a22.355340133%20-0700%20PDT">
     
 
 
@@ -187,7 +189,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    Is this thing on?
+    Using &#39;curl&#39; behind a Proxy
 
 </div>
 
@@ -195,23 +197,31 @@
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Sun Apr 9 2017 23:22:59 -0400'>Apr 9, 2017</div>
+                    <div class="date" title='Fri Nov 15 2013 22:47:03 -0700'>Nov 15, 2013</div>
                     
                     
-		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
                     
                 </div>
             </div>
             <div class="markdown">
-                
+                <p>This is a relatively stupid problem that took me a few seconds to figure out, but I figured I would post on it anyway. I have recently been working with <a href="https://github.com/munki/createOSXinstallPkg"><code>createosxinstallpkg</code></a>, part of the tool set included to administer <a href="https://github.com/munki/munki">Munki</a>, an open source managed software update server (and client) for OS X machines.</p>
 
-<h1 id="wat">Wat</h1>
+<p>I used <code>createosxinstallpkg</code> last year when I needed to build a never-booted upgrade package to for 10.7 clients to upgrade to 10.8.2, which was being certified in our enterprise environment at the time. Despite the fact that OS X Mavericks 10.9 is offered to users as a free upgrade, we have several users who feel more comfortable letting IT perform the work, so I use <code>createosxinstallpkg</code> to create the never-booted upgrade package our techs use to perform the &ldquo;supervised&rdquo; upgrades.</p>
 
-<p>This is the initial post in a series of steps I am taking to move <a href="https://cobbservations.wordpress.com">Cobbservations</a> to a site powered by <a href="https://gohugo.io">Hugo</a>. I stumbled across <code>hugo</code> recently while working with the maintainers of the <a href="https://github.com/micromdm"><code>micromdm</code></a> project. The <a href="https://micromdm.io">beautiful site</a> hosting the documentation is build with <code>hugo</code>, and given the looks, I just <em>had</em> to try it.</p>
+<p>In our environment, we have a proxy server for all outgoing traffic to the public internet. I noticed that during the process to check against Apple&rsquo;s software update catalog for the location of the incompatible applications package file, that the <code>createosxinstallpkg</code> job was failing after not being able to hit <code>swscan.apple.com:443</code> and ultimately timing out. After some inspection of the <code>createosxinstallpkg</code> source code, I saw that the python script is actually performing a <code>curl</code> against the software update catalog and subsequent location to find the incompatible applications package. I knew that I was going to have to specify to curl that I was behind a proxy, either by editing the source or by providing environment variables. When I chose to just specify the environment variables, I used the command:</p>
 
-<p>Somewhat separately, I&rsquo;ve been using <a href="http://www.markdowntutorial.com">Markdown</a> for quite a while and have finally gotten around to enjoying it more than standard wordpress-style content for blogging. I even recently re-formatted all of my <a href="https://github.com/loyaltyarm/splunk">splunk repo</a> searches to a more uniform Markdown syntax. So, I&rsquo;m undertaking a project of moving my blog contents over to Github hosting and plan to use <code>hugo</code> to maintain it.</p>
+<pre><code>export https_proxy=https://internet.proxyserver.mycompany.com:3128/
+</code></pre>
 
-<p>Lastly, one of the main features I like about Wordpress is its social network integration. This makes it super easy to update your LinkedIn network or Twitter followers that you&rsquo;ve published a new post. I&rsquo;m going to try to include this functionality in the <code>hugo</code> site when I get more time to figure out how to get that going.</p>
+<p>Soon after entering and having the package creation fail again, I realized I did not correctly specify my credentials to authenticate to our proxy server for https traffic. I edited my command and subsequent environment variable per below:</p>
+
+<pre><code>export https_proxy=https://username:password@internet.proxyserver.mycompany.com:3128/
+</code></pre>
+
+<p>Great, now my syntax is working for me&ndash;I&rsquo;m going to be golden 🏆. Then I realized I was editing environment variables for <code>curl</code> to use on my local administrator&rsquo;s environment variable file. Since <code>createosxinstallpkg</code> runs as the root user, I needed to make this change to the root user&rsquo;s environment variable instead.</p>
+
+<p>Once I realized the err of my ways, and made the correct environment variable edit for the root user, <code>createosxinstallpkg</code> was able to successfully communicate for its files. Silly problem, but I wanted to document it anyway in case someone starts banging their head like I did for a second.</p>
 
                 <br>
 		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
@@ -221,9 +231,9 @@
                 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'cobbservations';
-    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
-    var disqus_title = 'Is this thing on?';
-    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/is-this-thing-on\/';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/using-curl-behind-a-proxy\/';
+    var disqus_title = 'Using \x27curl\x27 behind a Proxy';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/using-curl-behind-a-proxy\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
