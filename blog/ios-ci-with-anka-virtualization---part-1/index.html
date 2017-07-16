@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Nick Cobb">
+<meta name="description" content="Disclaimer: I am an advisor for Veertu Inc.
+Introduction Starting with this post, I am writing a series of articles to show you how to get started build your own macOS private cloud for iOS CI using Veertu Inc.&rsquo;s latest technology, Anka. Anka was built to support many of the principles foundational to good continuous integration systems, including supporting fast incremental deploys and immutable infrastructure concepts. In this series, I&rsquo;ll show you how to get started with their hypervisor, registry, and controller to take full advantage of tools that were purpose-built to support iOS and macOS CI on Apple hardware.">
+
+<meta property="og:title" content="iOS CI with Anka Virtualization - Part 1" />
+<meta property="og:description" content="Disclaimer: I am an advisor for Veertu Inc.
+Introduction Starting with this post, I am writing a series of articles to show you how to get started build your own macOS private cloud for iOS CI using Veertu Inc.&rsquo;s latest technology, Anka. Anka was built to support many of the principles foundational to good continuous integration systems, including supporting fast incremental deploys and immutable infrastructure concepts. In this series, I&rsquo;ll show you how to get started with their hypervisor, registry, and controller to take full advantage of tools that were purpose-built to support iOS and macOS CI on Apple hardware." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/ios-ci-with-anka-virtualization---part-1/" />
+
+
+
+<meta property="article:published_time" content="2017-07-15T11:53:53-07:00"/>
+<meta property="article:modified_time" content="2017-07-15T11:53:53-07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     iOS CI with Anka Virtualization - Part 1 
+
+</title>
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/ios-ci-with-anka-virtualization---part-1/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-07-16%2011%3a04%3a16.723278528%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-07-16%2011%3a04%3a16.723278528%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-07-16%2011%3a04%3a16.723278528%20-0700%20PDT">
+    
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-07-16%2011%3a04%3a16.723278528%20-0700%20PDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://loyaltyarm.github.io/img/leaf.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://loyaltyarm.github.io/"><img class="avatar" src="https://loyaltyarm.github.io/img/headshot.jpg" srcset="https://loyaltyarm.github.io/img/headshot.jpg 1x"></a>
+            
+            <a href="https://loyaltyarm.github.io/"><div class="name">Nick Cobb</div></a>
+            
+              <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://loyaltyarm.github.io/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://loyaltyarm.github.io/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://linkedin.com/in/loyaltyarm"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://loyaltyarm.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://loyaltyarm.github.io/index.xml"><img class="icon" src="https://loyaltyarm.github.io/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    iOS CI with Anka Virtualization - Part 1
+
+</div>
+
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Jul 15 2017 11:53:53 PDT'>Jul 15, 2017</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p><em>Disclaimer: I am an advisor for Veertu Inc.</em></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Starting with this post, I am writing a series of articles to show you how to get started build your own macOS private cloud for iOS CI using <a href="https://veertu.com">Veertu Inc.&rsquo;s</a> latest technology, <a href="https://veertu.com/anka-technology/">Anka</a>. Anka was built to support many of the principles foundational to good continuous integration systems, including supporting fast incremental deploys and immutable infrastructure concepts. In this series, I&rsquo;ll show you how to get started with their hypervisor, registry, and controller to take full advantage of tools that were purpose-built to support iOS and macOS CI on Apple hardware.</p>
+
+<p>For this post, we will get started with installation and creating our very first Anka VM.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Of note, Anka comes in two product tiers, Anka Run and Anka Build. For the purposes of building a full-fledged CI system, we need Anka Build. First, we&rsquo;ll head over to the <a href="https://veertu.com/getting-started-with-anka/">Anka Releases page</a> to go ahead and get signed up. Once we&rsquo;ve signed up we receive an email with all of the download details. For now, go ahead and download <strong>all</strong> of the components for Anka Build. Once downloaded, let&rsquo;s install the <code>AnkaBuild-1.0_40.pkg</code> (version at the time of this writing) to our local macOS system (the laptop).</p>
+
+<p>Here&rsquo;s a brief note on the components used in this series:</p>
+
+<ul>
+<li>(1) MacBook Pro with Touchbar laptop for local development</li>
+<li>(2) Apple mac minis (as Anka nodes)</li>
+<li>(1) Amazon EC2 instance for Anka Registry</li>
+<li>(1) Amazon EC2 instance for Anka Controller</li>
+</ul>
+
+<p>Our EC2 instances above could technically be combined, but for the purposes of this writing we will show them separately to avoid confusion.</p>
+
+<p>Some additional prerequisites:</p>
+
+<ul>
+<li>A Jenkins server (or CI server of your choice, we will use Jenkins here)</li>
+<li><code>Install macOS Sierra.app</code> (downloaded to /Applications from the Mac App Store or Developer Portal)</li>
+</ul>
+
+<p>Once we have all of these components we can begin to create some VMs!</p>
+
+<h2 id="creating-our-first-vm">Creating our first VM</h2>
+
+<p>Now that we have Anka installed, let&rsquo;s take a look at creating our first VM. To create a VM, we will very simple run the following command to create a VM named <code>macos-anka-v1</code>:</p>
+
+<pre><code>anka create --ram-size 4G --cpu-count 4 --app /Applications/Install\ macOS\ Sierra.app macos-anka-v1
+</code></pre>
+
+<p>After running this command we get a nice progress dialog output to follow:</p>
+
+<pre><code>Attaching the InstallESD...
+Installing macOS 10.12.5...
+Install progress: 0.93%
+</code></pre>
+
+<p>and later&hellip;</p>
+
+<pre><code>Attaching the InstallESD...
+Installing macOS 10.12.5...
+Copying addons... 98.9%
+Volume on disk2s2 renamed to Macintosh HD
+&quot;disk3&quot; unmounted.
+&quot;disk3&quot; ejected.
+&quot;disk2&quot; unmounted.
+&quot;disk2&quot; ejected.
+Converting to ANKA format...
+61440+0 records in
+Preformatting hard drive
+vm created successfully with uuid: 4a5ff6eb-6995-11e7-81a5-784f43758c89
+Would you like to start the new vm? [y/N]:
+</code></pre>
+
+<p>We&rsquo;ll choose <code>y</code> to start our VM and see how things look. When the VM starts, we get a graphical printout of the VM properties.</p>
+
+<pre><code>+-----------------------+--------------------------------------+
+| uuid                  | 4a5ff6eb-6995-11e7-81a5-784f43758c89 |
++-----------------------+--------------------------------------+
+| name                  | macos-anka-v1                        |
++-----------------------+--------------------------------------+
+| cpu_cores             | 4                                    |
++-----------------------+--------------------------------------+
+| ram                   | 4G                                   |
++-----------------------+--------------------------------------+
+| image_id              | d4ae7554-6992-11e7-bbce-784f43758c89 |
++-----------------------+--------------------------------------+
+| status                | running                              |
++-----------------------+--------------------------------------+
+| addons                |                                      |
++-----------------------+--------------------------------------+
+| vnc_port              | 5900                                 |
++-----------------------+--------------------------------------+
+| vnc_connection_string | vnc://:admin@10.0.1.32:5900          |
++-----------------------+--------------------------------------+
+| vnc_password          | admin                                |
++-----------------------+--------------------------------------+
+| view_vm_display       | anka view macos-anka-v1              |
++-----------------------+--------------------------------------+
+</code></pre>
+
+<p>We&rsquo;re given a couple of options to view this virtual machine. Depending on our needs, we&rsquo;ll choose either the <code>vnc_connection_string</code> or the <code>view_vm_display</code>. The VNC connection will open a VNC view using the native <code>Screen Sharing.app</code> that comes with macOS. Because this is an Anka demo however, let&rsquo;s use the command <code>anka view macos-anka-v1</code> and open the Anka View application.</p>
+
+<p><img src="https://loyaltyarm.github.io/img/ankaview.png" alt="screenshot" /></p>
+
+<p>There it is! Our VM is created.</p>
+
+<h2 id="what-s-next">What&rsquo;s next?</h2>
+
+<p>Now that we have a virtual machine, we&rsquo;ll need to do some configuration of this environment to run our iOS continous integration. In the next post, we&rsquo;ll cover how Anka supports principles of immutable infrastructure and continuous delivery of infrastructure configuration.</p>
+
+                <br>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cobbservations';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/ios-ci-with-anka-virtualization---part-1\/';
+    var disqus_title = 'iOS CI with Anka Virtualization - Part 1';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/ios-ci-with-anka-virtualization---part-1\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98500532-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+</body>
+</html>
+
