@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Nick Cobb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 15 Jul 2017 11:53:53 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2017 16:36:59 -0400</lastBuildDate>
     
 	<atom:link href="https://loyaltyarm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bootstrapping macOS for CI</title>
+      <link>https://loyaltyarm.github.io/blog/bootstrapping-macos-for-ci/</link>
+      <pubDate>Sat, 29 Jul 2017 16:36:59 -0400</pubDate>
+      
+      <guid>https://loyaltyarm.github.io/blog/bootstrapping-macos-for-ci/</guid>
+      <description>Introduction I&amp;rsquo;ve been working on some other posts about provisioning macOS for the purposes of iOS CI. But before we can talk about provisioning, we might want to think about bootstrapping our macOS system first to make provisioning easier. What do I mean by bootstrapping, how is it accomplished, and why should you do it?
+Bootstrapping, in this case, refers to the initial setup of a macOS machine (could be non macOS also) in order to enable provisioning.</description>
+    </item>
     
     <item>
       <title>iOS CI with Anka Virtualization - Part 1</title>
@@ -18,7 +28,7 @@
       
       <guid>https://loyaltyarm.github.io/blog/ios-ci-with-anka-virtualization---part-1/</guid>
       <description>Disclaimer: I am an advisor for Veertu Inc.
-Introduction Starting with this post, I am writing a series of articles to show you how to get started build your own macOS private cloud for iOS CI using Veertu Inc.&amp;rsquo;s latest technology, Anka. Anka was built to support many of the principles foundational to good continuous integration systems, including supporting fast incremental deploys and immutable infrastructure concepts. In this series, I&amp;rsquo;ll show you how to get started with their hypervisor, registry, and controller to take full advantage of tools that were purpose-built to support iOS and macOS CI on Apple hardware.</description>
+Introduction Starting with this post, I am writing a series of articles to show you how to get started building your own macOS private cloud for iOS CI using Veertu Inc.&amp;rsquo;s latest technology, Anka. Anka was built to support many of the principles foundational to good continuous integration systems, including supporting fast incremental deploys and immutable infrastructure concepts. In this series, I&amp;rsquo;ll show you how to get started with their hypervisor, registry, and controller to take full advantage of tools that were purpose-built to support iOS and macOS CI on Apple hardware.</description>
     </item>
     
     <item>

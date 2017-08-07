@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://loyaltyarm.github.io/blog/bootstrapping-macos-for-ci/</loc>
+    <lastmod>2017-07-29T16:36:59-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/ios-ci-with-anka-virtualization---part-1/</loc>
     <lastmod>2017-07-15T11:53:53-07:00</lastmod>
   </url>
@@ -73,20 +78,20 @@
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/apple/</loc>
-    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://loyaltyarm.github.io/categories/apple/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/apple/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/blog/</loc>
-    <lastmod>2017-07-15T11:53:53-07:00</lastmod>
+    <lastmod>2017-07-29T16:36:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -97,20 +102,14 @@
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/ci/</loc>
-    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://loyaltyarm.github.io/categories/ci/</loc>
     <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/configuration/</loc>
-    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <loc>https://loyaltyarm.github.io/tags/ci/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,8 +120,8 @@
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/development/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <loc>https://loyaltyarm.github.io/tags/configuration/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,19 +132,25 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/development/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/fixed/</loc>
     <lastmod>2017-05-01T22:04:28-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/general/</loc>
+    <loc>https://loyaltyarm.github.io/categories/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/categories/general/</loc>
+    <loc>https://loyaltyarm.github.io/tags/general/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -157,25 +162,25 @@
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/ios/</loc>
-    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://loyaltyarm.github.io/categories/ios/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/ios-7/</loc>
-    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <loc>https://loyaltyarm.github.io/tags/ios/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://loyaltyarm.github.io/categories/ios-7/</loc>
+    <lastmod>2014-05-06T01:27:26-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://loyaltyarm.github.io/tags/ios-7/</loc>
     <lastmod>2014-05-06T01:27:26-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -187,31 +192,25 @@
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/mdm/</loc>
-    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://loyaltyarm.github.io/categories/mdm/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/mdm/</loc>
+    <lastmod>2017-02-17T02:01:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/</loc>
-    <lastmod>2017-07-15T11:53:53-07:00</lastmod>
+    <lastmod>2017-07-29T16:36:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://loyaltyarm.github.io/tags/sierra/</loc>
-    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://loyaltyarm.github.io/tags/software/</loc>
     <lastmod>2016-11-12T11:15:06-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -223,19 +222,25 @@
   </url>
   
   <url>
+    <loc>https://loyaltyarm.github.io/tags/software/</loc>
+    <lastmod>2016-11-12T11:15:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://loyaltyarm.github.io/tags/</loc>
     <lastmod>2017-02-17T02:01:00-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/tags/web/</loc>
+    <loc>https://loyaltyarm.github.io/categories/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://loyaltyarm.github.io/categories/web/</loc>
+    <loc>https://loyaltyarm.github.io/tags/web/</loc>
     <lastmod>2017-04-09T23:22:59-04:00</lastmod>
     <priority>0</priority>
   </url>

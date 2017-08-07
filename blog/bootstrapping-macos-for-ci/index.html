@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Nick Cobb">
+<meta name="description" content="Introduction I&rsquo;ve been working on some other posts about provisioning macOS for the purposes of iOS CI. But before we can talk about provisioning, we might want to think about bootstrapping our macOS system first to make provisioning easier. What do I mean by bootstrapping, how is it accomplished, and why should you do it?
+Bootstrapping, in this case, refers to the initial setup of a macOS machine (could be non macOS also) in order to enable provisioning.">
+
+<meta property="og:title" content="Bootstrapping macOS for CI" />
+<meta property="og:description" content="Introduction I&rsquo;ve been working on some other posts about provisioning macOS for the purposes of iOS CI. But before we can talk about provisioning, we might want to think about bootstrapping our macOS system first to make provisioning easier. What do I mean by bootstrapping, how is it accomplished, and why should you do it?
+Bootstrapping, in this case, refers to the initial setup of a macOS machine (could be non macOS also) in order to enable provisioning." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loyaltyarm.github.io/blog/bootstrapping-macos-for-ci/" />
+
+
+
+<meta property="article:published_time" content="2017-07-29T16:36:59-04:00"/>
+<meta property="article:modified_time" content="2017-07-29T16:36:59-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Bootstrapping macOS for CI 
+
+</title>
+<link rel="canonical" href="https://loyaltyarm.github.io/blog/bootstrapping-macos-for-ci/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/reset.css?t=2017-08-06%2021%3a33%3a50.508553941%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/pygments.css?t=2017-08-06%2021%3a33%3a50.508553941%20-0700%20PDT">
+    <link rel="stylesheet" href="https://loyaltyarm.github.io/css/main.css?t=2017-08-06%2021%3a33%3a50.508553941%20-0700%20PDT">
+    
+        <link rel="stylesheet" href="https://loyaltyarm.github.io/css/override.css?t=2017-08-06%2021%3a33%3a50.508553941%20-0700%20PDT">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://loyaltyarm.github.io/img/leaf.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://loyaltyarm.github.io/"><img class="avatar" src="https://loyaltyarm.github.io/img/headshot.jpg" srcset="https://loyaltyarm.github.io/img/headshot.jpg 1x"></a>
+            
+            <a href="https://loyaltyarm.github.io/"><div class="name">Nick Cobb</div></a>
+            
+              <h3 class="self-intro">A wise man never knows all; only a fool knows everything.</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://loyaltyarm.github.io/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://loyaltyarm.github.io/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://linkedin.com/in/loyaltyarm"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/loyaltyarm" target="_blank" rel="noopener"><img class="icon" src="https://loyaltyarm.github.io/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:loyaltyarm@gmail.com"><img class="icon" src="https://loyaltyarm.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="https://loyaltyarm.github.io/index.xml"><img class="icon" src="https://loyaltyarm.github.io/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Bootstrapping macOS for CI
+
+</div>
+
+                    <div class="initials"><a href="https://loyaltyarm.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Jul 29 2017 16:36:59 -0400'>Jul 29, 2017</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>7 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<h2 id="introduction">Introduction</h2>
+
+<p>I&rsquo;ve been working on some other posts about <em>provisioning</em> macOS for the purposes of iOS CI. But before we can talk about provisioning, we might want to think about bootstrapping our macOS system first to make provisioning easier. What do I mean by bootstrapping, how is it accomplished, and why should you do it?</p>
+
+<p><strong>Bootstrapping, in this case, refers to the initial setup of a macOS machine (could be non macOS also) in order to enable provisioning.</strong> There are many reasons I&rsquo;ve taken this approach in environments I support, but the main reason is that I prefer to use a <em>no-image</em> workflow to set up my infrastructure. Additionally other admins are considering new workflows as well. At <a href="https://www.macdevops.ca">MacDevOpsYVR</a> 2017, Michael Lynn talked about how Apple may be changing traditional system administration workflows in his talk, <a href="https://www.youtube.com/watch?v=4Qv8CE6D_Rc&amp;list=PLOpBG-mD9ZjHdx6_yF4y8IR6eGDWgkJr9&amp;index=1&amp;t=2s">Mac-narök: The End Times of Our Workflows</a>. The talk is worth a watch for those considering retaining an imaging-based or more traditional setup workflow. But why do I do it this way?</p>
+
+<h2 id="a-no-image-approach">A no-image approach</h2>
+
+<p>No-image setups help me scale CI infrastructure quickly, and allow me to use macOS out of the box as it ships. This is important because I do not have to maintain imaging servers, large image repos, and other imaging infrastructure to support my growing fleet. I also don&rsquo;t have to spend time maintaining even a base thin image, which would periodically have to be updated at least when major macOS releases come down. Instead, I can put all of my bootstrapping logic into a script, and run that script on the machine after the Apple hardware is initially installed by a data center team.</p>
+
+<p>The other advantage this allows me is that I can move the business logic of my infrastructure setup amongst various pieces of hardware we might use, particularly Mac Pro or Mac Mini. I can even use the same bootstrap script for virtual machines too! I can also easily change provisioning tools if I need to, and install additional components by making a quick code change to my bootstrap script. Those changes are stored in version control and are reviewed before landing as well. Lastly, the time to set up new infrastructure is much faster, and less prone to network failures I&rsquo;ve seen when trying to image large groups of macOS machines. Bootstrap+provisioning workflows allow me to move easily across data centers as well, because I only need reachability to my <code>git</code> and <code>munki</code> servers.</p>
+
+<h2 id="bootstrapping">Bootstrapping</h2>
+
+<p>What kind of things do we want in a bootstrap script? The list below gives some good examples:</p>
+
+<ul>
+<li>adding a specific administrator user account</li>
+<li>enable remote login (SSH) and VNC</li>
+<li>setting power management settings we need for CI (always on in our environment)</li>
+<li>installing configuration management tooling (Puppet, Chef, etc.)</li>
+<li>installing base dependencies (homebrew, munki tools, etc.)</li>
+<li>checking into a packaging server (for me, how I install Xcode)</li>
+</ul>
+
+<p>After the list above, we would ideally use configuration management (Puppet, Chef, Ansible, etc.) to continue with any other provisioning, such as installing specific homebrew formula, pip packages, or ruby gems (dependencies).</p>
+
+<h2 id="a-working-example">A Working Example</h2>
+
+<p>In my environment, I&rsquo;m lucky enough to receive infrastructure configured by our data center team that includes the following:</p>
+
+<ul>
+<li>required administrator user account that has been logged in</li>
+<li>remote login (SSH) enabled</li>
+</ul>
+
+<p>This makes it easy to ssh into a machine and run the <code>bootstrap.sh</code> script I use for my environment. To help, I&rsquo;ve shared my <code>bootstrap.sh</code> <a href="https://github.com/loyaltyarm/scripts/blob/master/mac/bootstrap.sh">script on Github</a>. Let&rsquo;s take a look at each part below:</p>
+
+<blockquote>
+<p>Note, we have to run this script as our <code>root</code> user, because we change many system settings here in addition to installing user-space tools. You&rsquo;d run this as <code>sudo ./bootstrap.sh</code> and the specification of the <code>USER</code> in the script would handle configuration of user space items automatically.</p>
+</blockquote>
+
+<p>First, we <code>set -e</code> to exit immediately if any of the commands fail:</p>
+
+<pre><code>set -e
+</code></pre>
+
+<p>Then, we assign some variables for <code>brew</code> path, the <a href="https://github.com/munki/munki/wiki/Preferences">Munki client identifer</a> (so that our machine receives only packages scoped to the bootstrap workflow), the Munki server URL, our desired Puppet version, our token administrator CI account, a quick and dirty way to identify the Wi-Fi interface (for disabling Wi-Fi), and our working directory for executing Puppet provisioning at the end of the script.</p>
+
+<pre><code>BREW=&quot;/usr/local/bin/brew&quot;
+CLIENT_IDENTIFIER=&quot;machine-bootstrap&quot;
+PACKAGING_SERVER_URL=&quot;http://munki-internal01.example.com/repo&quot; 
+PUPPET_VERSION=&quot;4.1.0&quot;
+USER=&quot;testuser&quot;
+WIFI_INTERFACE=`/usr/sbin/networksetup -listallhardwareports | awk '/Hardware Port: Wi-Fi/,/Ethernet/' | awk 'NR==2' | cut -d &quot; &quot; -f 2`
+WORKING_DIRECTORY=&quot;/tmp/my-puppet-repo-folder&quot;
+</code></pre>
+
+<p>Next, we download and install the Munki tools. This used to be a manual step because the munki tools <a href="https://github.com/munki/munki/issues/5">required a restart</a>, but because we will eventually restart the machine anyway, this is a non-issue.</p>
+
+<pre><code>echo &quot;Installing the munki tools...&quot;
+pushd /tmp
+/usr/bin/curl -OL https://github.com/munki/munki/releases/download/v3.0.3/munkitools-3.0.3.3352.pkg
+sudo /usr/sbin/installer -pkg munkitools-3.0.3.3352.pkg -target /
+popd
+</code></pre>
+
+<p>Then, we enable remote login (SSH):</p>
+
+<pre><code>echo &quot;Enabling ssh...&quot;
+/usr/sbin/systemsetup -setremotelogin on
+</code></pre>
+
+<p>enable screen sharing (VNC):</p>
+
+<pre><code>echo &quot;Enabling screen sharing...&quot;
+/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
+</code></pre>
+
+<p>disable sleep and set <em>Always On</em> power settings:</p>
+
+<pre><code>echo &quot;Disabling sleep...&quot;
+/usr/sbin/systemsetup -setharddisksleep Never
+
+echo &quot;Setting power management settings...&quot;
+/usr/bin/pmset sleep 0
+/usr/bin/pmset displaysleep 0
+/usr/bin/pmset disksleep 0
+/usr/bin/pmset womp 1 # wake on magic packet
+/usr/bin/pmset powernap 0
+/usr/bin/pmset autorestart 1 # autorestart on power failure
+</code></pre>
+
+<p>disable screen lock:</p>
+
+<pre><code>/usr/bin/defaults write com.apple.screensaver askForPasswordDelay 1
+</code></pre>
+
+<p>disable wireless (because we are wired in the data center):</p>
+
+<pre><code>echo &quot;Disabling wireless...&quot;
+/usr/sbin/networksetup -setairportpower $WIFI_INTERFACE off
+</code></pre>
+
+<p>mute the sound (purely for sanity, nothing really special here):</p>
+
+<pre><code>echo &quot;Muting the sound...&quot;
+/usr/bin/osascript -e 'set volume output muted true'
+</code></pre>
+
+<p>check for and install homebrew if missing:</p>
+
+<pre><code>if [ -f &quot;$BREW&quot; ]
+then
+    echo &quot;Homebrew found.&quot;
+else
+    echo &quot;Homebrew not found.&quot;
+    sleep 1
+    echo &quot;You need to install homebrew!&quot;
+    sleep 1
+    echo &quot;We will do that now...&quot;
+    sleep 2
+    sudo -u $USER /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; \ &lt;/dev/null
+fi
+</code></pre>
+
+<p>for sanity we also update homebrew after installing:</p>
+
+<pre><code>sudo -u $USER /usr/local/bin/brew update
+</code></pre>
+
+<p>and install <code>brew cask</code> and <code>java</code> as dependencies for working with Jenkins:</p>
+
+<pre><code>sudo -u $USER /usr/local/bin/brew install caskroom/cask/brew-cask
+sudo -u $USER /usr/local/bin/brew cask install java
+</code></pre>
+
+<p>then set some Munki properties:</p>
+
+<pre><code>echo &quot;Setting munki properties...&quot;
+/usr/bin/defaults write /Library/Preferences/ManagedInstalls ClientIdentifier $CLIENT_IDENTIFIER
+/usr/bin/defaults write /Library/Preferences/ManagedInstalls SoftwareRepoURL $PACKAGING_SERVER_URL
+</code></pre>
+
+<p>At this point in the script, we have set up all of the prerequisites needed to use Munki, so we&rsquo;ll go ahead and check in now with the <em>client identifier</em> we used above:</p>
+
+<pre><code>echo &quot;Checking for packages...&quot;
+/usr/local/munki/managedsoftwareupdate -v --checkonly
+</code></pre>
+
+<p>and then install any scoped packages:</p>
+
+<pre><code>echo &quot;Installing packages...&quot;
+/usr/local/munki/managedsoftwareupdate -v --installonly
+</code></pre>
+
+<p>Now that the munki part of our workflow is finished, we&rsquo;ll install Puppet using the public gem (could also use a <code>.pkg</code> here). Note that because we are using the gem, we have to use the <code>-n</code> option to set the installed path to <code>/usr/local/bin</code>:</p>
+
+<pre><code>echo &quot;Installing Puppet...&quot;
+sudo /usr/bin/gem install -n /usr/local/bin puppet -v $PUPPET_VERSION --no-rdoc --no-ri
+</code></pre>
+
+<p>We use Hiera-eyaml for secret management, so we&rsquo;ll install that as well:</p>
+
+<pre><code>echo &quot;Installing Hiera-Eyaml...&quot;
+sudo /usr/bin/gem install -n /usr/local/bin hiera-eyaml --no-rdoc --no-ri
+</code></pre>
+
+<p>and install <a href="https://docs.puppet.com/pe/latest/r10k.html">r10k</a> as well:</p>
+
+<pre><code>echo &quot;Installing r10k...&quot;
+sudo /usr/bin/gem install -n /usr/local/bin r10k --no-document
+</code></pre>
+
+<p>This completes the Puppet installation, so we&rsquo;ll complete our final direct install of the last dependency, <code>fastlane</code>. <a href="https://fastlane.tools/">Fastlane</a> is a great tool for generally managing various facets of iOS CI at scale; if you&rsquo;re not using it already you absolutely should be:</p>
+
+<pre><code>echo &quot;Installing fastlane...&quot;
+sudo /usr/bin/gem install -n /usr/local/bin fastlane --no-rdoc --no-ri
+</code></pre>
+
+<p>So that&rsquo;s it&ndash;we&rsquo;ve bootstrapped our infrastructure in one easy to use script! Did we forget anything? Actually yes&hellip;we haven&rsquo;t <em>run</em> Puppet yet! There are many ways to do this, but the general masterless workflow looks like below:</p>
+
+<ul>
+<li>Clone your Puppet repo from source control</li>
+<li>Call the <code>puppet</code> binary directly using the <code>apply</code> command <strong>OR</strong> write a wrapper script for <code>puppet</code> that performs both of these actions together</li>
+</ul>
+
+<p>If you are using a puppet master, then you can add your puppet execution command into the end of the script to finish any reminaing configuration. In my environments, I prefer to run <em>masterless</em> Puppet, a topology of which there are some benefits and tradeoffs. I recommend doing research if you&rsquo;re interested in using Puppet and exploring deployment types.</p>
+
+<p>There&rsquo;s a couple of other final steps that would finish our bootstrapping workflow. One of those could be getting the machine rebooted to help load any LaunchDaemons we&rsquo;ve installed along the way and to make sure our infrastructure is fully ready to go. Another could be running the <code>softwareupdate</code> command to set updates to occur automatically or not at all (manually). Manual updates could be used since we have Munki here, and can deploy specific releases after testing them first against our tooling.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Bootstrapping is an essential replacement of a no-image workflow, something that more shops should think about adopting, in my opinion. Being able to store your scripts in source control and migrate easily between tooling keeps your team flexible to changes by Apple or others, and gives you versioning to your configurations as well.</p>
+
+                <br>
+		<p><a href="https://loyaltyarm.github.io/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'cobbservations';
+    var disqus_identifier = 'https:\/\/loyaltyarm.github.io\/blog\/bootstrapping-macos-for-ci\/';
+    var disqus_title = 'Bootstrapping macOS for CI';
+    var disqus_url = 'https:\/\/loyaltyarm.github.io\/blog\/bootstrapping-macos-for-ci\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98500532-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+</body>
+</html>
+
